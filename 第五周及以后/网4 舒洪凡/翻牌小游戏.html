@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>翻牌小游戏</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            width: 450px;
+            list-style: none;
+            margin: 100px auto;
+        }
+        ul li {
+            position: relative;
+            width: 100px;
+            height: 120px;
+            line-height: 120px;
+            text-align: center;
+            font-size: 20px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            box-shadow:1px 1px 10px 1px #ccc;
+            background-color: #fff;
+            margin-bottom: 15px;
+
+            transform-style: preserve-3d;
+            transition: all .8s;
+        }
+        .transfrom::after {
+            content: '';
+            position: absolute;
+            width:100px;
+            height:120px;
+            transform-origin:left ;
+            box-shadow:1px 1px 10px 1px #ccc;
+
+            /*将after伪类折叠到box的背面，作为牌的反面*/
+            top:0;
+            left:100px;
+            transform:rotateY(180deg);
+        }
+
+        .transfrom1::after {
+            background-color: #111;
+        }
+        .transfrom2::after {
+            background-color: #333;
+        }
+        .transfrom3::after {
+            background-color: #666;
+        }
+        .transfrom4::after {
+            background-color: #999;
+        }
+
+        .translate {
+            transform:rotateY(180deg);
+        }
+
+        .operate {
+            display: block;
+            margin: 20px auto 0;
+        }
+    </style>
+</head>
+<body>
+	
+    <ul class="container"></ul>
+	<!-- 开始按钮 -->
+    <button class="operate">开始</button>
+
+    <script src="jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        $(function(){
+            /*
+                逻辑思路：
+                1、点击牌面 翻转牌面 并获取当前点击的牌面值 放入数组中
+                2、当数组长度等于2的时候需做判断 并且在判断完成前阻止继续点击
+                3、跟上一次的牌面值做对比 如果相同则对2张牌添加翻转的class 不同则错则对2张牌移除翻转的class
+                4、判断完成清空数组
+            */
+			// 初始数据
+            var pokerArr = [1, 2, 3, 4, 1, 2, 3, 4]; 
+			//点击的牌面值
+            var chooseArr = []; 
+			//是否可以点击牌面
+            var allowClick = false; 
+			//得分
+            var score = 0; 
+
+            // 点击牌面
+            $(".container").on("click", "li", function(){
+                if(allowClick){
+					// 翻转牌面
+                    $(this).addClass("translate");
+					// 获取牌面值
+                    let currentValue = $(this).attr("data-value");
+					// 把值添加到数组中
+                    chooseArr.push(currentValue);
+					// 数组长度为2时判断
+                    if(chooseArr.length == 2){
+                        judge(chooseArr);
+                    }
+                }
+            })
+
+            // 判断是否相同
+            function judge(chooseArr){
+				// 不允许点击
+                allowClick = false;
+				// 不相同
+                if(chooseArr[0] != chooseArr[1]){
+                    setTimeout(() => {
+                        $(".container li").each(function(){
+							// 移出翻转class
+                            if($(this).hasClass("translate") && ($(this).attr("data-value") == chooseArr[0] || $(this).attr("data-value") == chooseArr[1])){
+                                $(this).removeClass("translate");
+                            }
+                        })
+                    }, 800)
+				// 相同
+                }else{
+					// 得分++
+                    score++;
+					// 得分为满分,成功过关!!!
+                    if(score == pokerArr.length / 2){
+                        setTimeout(() => {
+                            alert("成功过关!!!");
+                        }, 500)
+                    }
+                }
+                setTimeout(() => {
+					// 重新初始化值
+                    chooseArr.length = 0;
+					// 允许点击
+                    allowClick = true;
+                }, 800)
+            }
+
+            // 打乱数组下标
+            function randArr(arr) {
+				// 计算打乱次数
+                var len = arr.length
+                //首先从最大的数开始遍历，之后递减
+                for(var i = arr.length - 1; i >= 0; i--) {
+                //随机索引值randomIndex是从0-arr.length中随机抽取的
+                    var randomIndex = Math.floor(Math.random() * (i + 1));
+                //下面三句相当于把从数组中随机抽取到的值与当前遍历的值互换位置
+                    var itemIndex = arr[randomIndex];
+                    arr[randomIndex] = arr[i];
+                    arr[i] = itemIndex;
+                }
+                //每一次的遍历都相当于把从数组中随机抽取（不重复）的一个元素放到数组的最后面（索引顺序为：len-1,len-2,len-3......0）
+                return arr;
+            }
+
+            // 重组数据并渲染
+            function regroupArr(pokerArr){
+                let newPokerArr = [];
+                let randIndexArr = randArr([0, 1, 2, 3, 4, 5, 6, 7]);
+                let liHtml = "";
+                for(let i = 0; i < randIndexArr.length; i++){
+                    newPokerArr.push(pokerArr[randIndexArr[i]]);
+                    liHtml += `<li class="transfrom transfrom${newPokerArr[i]}" data-value="${newPokerArr[i]}"></li>`;
+                }
+                $(".container").html(liHtml);
+            }
+            regroupArr(pokerArr);
+
+            // 开始
+            function start() {
+                allowClick = true;
+            }
+
+            // 重置
+            function restart() {
+                allowClick = true;
+                score = 0;
+                regroupArr(pokerArr);
+            }
+
+            // 操作
+            $(".operate").click(function(){
+                if($(this).text() == "开始"){
+                    start();
+                    $(this).text("重新开始");
+                }else{
+                    restart();
+                }
+            })
+        })
+    </script>
+</body>
+</html>

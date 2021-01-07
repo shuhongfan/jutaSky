@@ -1,0 +1,1646 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>DNF阿拉德创世纪</title>
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
+		<style type="text/css">
+			html,
+			body {
+				position: relative;
+				height: 100%;
+			}
+
+			body {
+				background: #eee;
+				font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+				font-size: 14px;
+				color: #000;
+				margin: 0;
+				padding: 0;
+				min-width: 1160px;
+			}
+
+			input[type="text"],
+			input[type="password"],
+			input[type="button"],
+			textarea {
+				outline-style: none;
+				-webkit-appearance: none;
+			}
+
+			.swiper-container {
+				width: 100%;
+				height: 100%;
+			}
+
+			.swiper-slide {
+				text-align: center;
+				font-size: 18px;
+				/* background: #90C; */
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				display: flex;
+				-webkit-box-pack: center;
+				-ms-flex-pack: center;
+				-webkit-justify-content: center;
+				justify-content: center;
+				-webkit-box-align: center;
+				-ms-flex-align: center;
+				-webkit-align-items: center;
+				align-items: center;
+			}
+
+			.swiper-wrapper {
+				width: 100%;
+				height: 100%;
+				overflow: visible;
+				transition: transform 1s cubic-bezier(0.86, 0, 0.03, 1);
+				-webkit-transition: -webkit-transform 1s cubic-bezier(0.86, 0, 0.03, 1);
+			}
+
+			/*section-1底部导航*/
+			#s1 .bt-nav {
+				position: absolute;
+				top: 70%;
+				margin-left: -600px;
+				text-align: center;
+				display: inline;
+			}
+
+			#s1 .bt-nav ul {
+				margin: 0 auto;
+				text-align: center;
+				display: block;
+			}
+
+			#s1 .bt-nav ul li {
+				float: left;
+				margin: 0 10px;
+				display: block;
+				text-align: center;
+			}
+
+
+
+			#s1 {
+				background-image: url(img/bg1.jpg);
+				background-size: cover;
+				z-index: 9999;
+			}
+
+			#s2 {
+				background-image: url(img/bg2.jpg);
+				background-size: cover;
+			}
+
+			#s3 {
+				background-image: url(img/bg3.jpg);
+				background-size: cover;
+			}
+
+			#s4 {
+				background-image: url(img/bg4.jpg);
+				background-size: cover;
+			}
+
+			#s5 {
+				background-image: url(img/bg5.jpg);
+				background-size: cover;
+			}
+
+			#s6 {
+				background-image: url(img/bg6.jpg);
+				background-size: cover;
+			}
+
+			#s7 {
+				background-image: url(img/bg7.jpg);
+				background-size: cover;
+			}
+
+			/*底部按钮*/
+			.swiper-button-next {
+				width: 32px;
+				height: 47px;
+				position: fixed;
+				top: 98%;
+				left: 48%;
+				z-index: 500;
+				border: 0;
+				cursor: pointer;
+			}
+
+			.next-but-arraw {
+				width: 200px;
+				height: 14px;
+				margin: 0 auto;
+				animation: up-fade 1s ease 0s infinite;
+				-moz-animation: up-fade 1s ease 0s infinite;
+				-ms-animation: up-fade 1s ease 0s infinite;
+				-o-animation: up-fade 1s ease 0s infinite;
+				-webkit-animation: up-fade 1s ease 0s infinite;
+			}
+
+			@keyframes up-fade {
+				0% {
+					opacity: 1
+				}
+
+				100% {
+					-webkit-transform: translate3d(0px, -6px, 0);
+					opacity: 0.6
+				}
+			}
+
+			@-ms-keyframes up-fade {
+				0% {
+					opacity: 1
+				}
+
+				100% {
+					-webkit-transform: translate3d(0px, -6px, 0);
+					opacity: 0.6
+				}
+			}
+
+			@-o-keyframes up-fade {
+				0% {
+					opacity: 1
+				}
+
+				100% {
+					-webkit-transform: translate3d(0px, -6px, 0);
+					opacity: 0.6
+				}
+			}
+
+			@-moz-keyframes up-fade {
+				0% {
+					opacity: 1
+				}
+
+				100% {
+					-webkit-transform: translate3d(0px, -6px, 0);
+					opacity: 0.6
+				}
+			}
+
+			@-webkit-keyframes up-fade {
+				0% {
+					opacity: 1
+				}
+
+				100% {
+					-webkit-transform: translate3d(0px, -6px, 0);
+					opacity: 0.6
+				}
+			}
+		</style>
+
+		<!-- 导航栏css -->
+		<style type="text/css">
+			@charset "UTF-8";
+
+			* {
+				margin: 0;
+				padding: 0;
+				border: 0;
+				outline: none;
+				box-sizing: border-box;
+				font-family: "Poppins", sans-serif;
+			} */
+
+			html,
+			body {
+				height: 100vh;
+				width: 100vw;
+				background-color: #000;
+				background: linear-gradient(#1F1F21, #000);
+			}
+
+			.main {
+				position: fixed;
+				left: 0%;
+				top: 00%;
+				display: flex;
+				height: 100vh;
+				width: 100vw;
+				flex-wrap: wrap;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.navigation-circle {
+				display: block;
+				position: relative;
+				height: 320px;
+				width: 320px;
+				margin: auto;
+			}
+
+			.navigation-circle__inner {
+				display: block;
+				position: relative;
+				height: 100%;
+				width: 100%;
+			}
+
+			.navigation-circle__list {
+				display: block;
+				position: absolute;
+				height: 320px;
+				width: 320px;
+				transform: rotate(-90deg);
+				animation: 2.2s cubic-bezier(0.25, -0.25, 0.35, 1) 0 1 animate-in-list forwards;
+			}
+
+			.navigation-circle-svg {
+				display: block;
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				transform: rotateZ(-90deg);
+			}
+
+			.navigation-circle-svg--opaque {
+				opacity: 0.5;
+			}
+
+			.navigation-circle-svg--mask circle {
+				transition: all 0.5s ease;
+				transition-delay: 0.5s;
+				animation: 2.2s ease 0 1 animate-in-svg-circle-mask backwards;
+			}
+
+			.navigation-circle-list-item {
+				display: block;
+				position: absolute;
+				height: 0;
+				width: calc(50% + 16px);
+				top: 50%;
+				left: 50%;
+				list-style: none;
+				transform-origin: 0 0;
+			}
+
+			.navigation-circle-list-item__point {
+				display: block;
+				position: absolute;
+				height: 32px;
+				width: 32px;
+				top: -16px;
+				right: 2px;
+				cursor: pointer;
+				transform: scale(0);
+			}
+
+			.navigation-circle-list-item__point:before {
+				content: "•";
+				display: block;
+				position: absolute;
+				height: 32px;
+				width: 32px;
+				top: 0;
+				color: #c644fc;
+				background-color: rgb(249, 205, 29);
+				font-size: 12px;
+				font-weight: 400;
+				line-height: 32px;
+				text-align: center;
+				border: 2px solid #c644fc;
+				border-radius: 50%;
+				box-shadow: inset 0px 0px 0px 0px #c644fc;
+				transform: scale(0.75);
+				transition: all 0.5s ease;
+			}
+
+			.navigation-circle-list-item__meta {
+				display: block;
+				position: absolute;
+				overflow: hidden;
+				opacity: 0;
+				transform-origin: center;
+				margin-left: -40px;
+				margin-top: -40px;
+				min-width: 128px;
+				padding: 4px;
+				width: 110px;
+				height: 110px;
+				background: url(img/img_circle1.png);
+			}
+			.eq1{
+				background: url(img/img_circle2.png);
+			}
+			.eq2{
+				background: url(img/img_circle3.png);
+			}
+			.eq3{
+				background: url(img/img_circle4.png);
+			}
+			.eq4{
+				background: url(img/img_circle5.png);
+			}
+			.eq5{
+				background: url(img/img_circle6.png);
+			}
+			
+			.navigation-circle-list-item__title {
+				display: block;
+				color: #f7f7f7;
+				text-align: left;
+				font-size: 14px;
+				border-bottom: 1px solid #f7f7f7;
+				padding-bottom: 4px;
+				margin-bottom: 6px;
+			}
+
+			.navigation-circle-list-item__subtitle {
+				display: block;
+				color: #f7f7f7;
+				text-align: center;
+				font-weight: 200;
+				font-size: 12px;
+			}
+
+			.navigation-circle-list-item:nth-of-type(1) {
+				transform: rotateZ(calc((360deg / 7) * 1));
+			}
+
+			.navigation-circle-list-item:nth-of-type(1) .navigation-circle-list-item__meta {
+				transform: rotateZ(38.5714285714deg);
+			}
+
+			.navigation-circle-list-item:nth-of-type(1) .navigation-circle-list-item__point {
+				animation: 1s cubic-bezier(0.55, -0.3, 0.6, 1.5) 0s 1 animate-in-list-item-point forwards;
+			}
+
+			.navigation-circle-list-item:nth-of-type(2) {
+				transform: rotateZ(calc((360deg / 7) * 2));
+			}
+
+			.navigation-circle-list-item:nth-of-type(2) .navigation-circle-list-item__meta {
+				transform: rotateZ(-12.8571428571deg);
+			}
+
+			.navigation-circle-list-item:nth-of-type(2) .navigation-circle-list-item__point {
+				animation: 1s cubic-bezier(0.55, -0.3, 0.6, 1.5) 0.2s 1 animate-in-list-item-point forwards;
+			}
+
+			.navigation-circle-list-item:nth-of-type(3) {
+				transform: rotateZ(calc((360deg / 7) * 3));
+			}
+
+			.navigation-circle-list-item:nth-of-type(3) .navigation-circle-list-item__meta {
+				transform: rotateZ(-64.2857142857deg);
+			}
+
+			.navigation-circle-list-item:nth-of-type(3) .navigation-circle-list-item__point {
+				animation: 1s cubic-bezier(0.55, -0.3, 0.6, 1.5) 0.4s 1 animate-in-list-item-point forwards;
+			}
+
+			.navigation-circle-list-item:nth-of-type(4) {
+				transform: rotateZ(calc((360deg / 7) * 4));
+			}
+
+			.navigation-circle-list-item:nth-of-type(4) .navigation-circle-list-item__meta {
+				transform: rotateZ(-115.7142857143deg);
+			}
+
+			.navigation-circle-list-item:nth-of-type(4) .navigation-circle-list-item__point {
+				animation: 1s cubic-bezier(0.55, -0.3, 0.6, 1.5) 0.6s 1 animate-in-list-item-point forwards;
+			}
+
+			.navigation-circle-list-item:nth-of-type(5) {
+				transform: rotateZ(calc((360deg / 7) * 5));
+			}
+
+			.navigation-circle-list-item:nth-of-type(5) .navigation-circle-list-item__meta {
+				transform: rotateZ(-167.1428571429deg);
+			}
+
+			.navigation-circle-list-item:nth-of-type(5) .navigation-circle-list-item__point {
+				animation: 1s cubic-bezier(0.55, -0.3, 0.6, 1.5) 0.8s 1 animate-in-list-item-point forwards;
+			}
+
+			.navigation-circle-list-item:nth-of-type(6) {
+				transform: rotateZ(calc((360deg / 7) * 6));
+			}
+
+			.navigation-circle-list-item:nth-of-type(6) .navigation-circle-list-item__meta {
+				transform: rotateZ(-218.5714285714deg);
+			}
+
+			.navigation-circle-list-item:nth-of-type(6) .navigation-circle-list-item__point {
+				animation: 1s cubic-bezier(0.55, -0.3, 0.6, 1.5) 1s 1 animate-in-list-item-point forwards;
+			}
+
+			.navigation-circle-list-item:nth-of-type(7) {
+				transform: rotateZ(calc((360deg / 7) * 7));
+			}
+
+			.navigation-circle-list-item:nth-of-type(7) .navigation-circle-list-item__meta {
+				transform: rotateZ(-270deg);
+			}
+
+			.navigation-circle-list-item:nth-of-type(7) .navigation-circle-list-item__point {
+				animation: 1s cubic-bezier(0.55, -0.3, 0.6, 1.5) 1.2s 1 animate-in-list-item-point forwards;
+			}
+
+			.navigation-circle-list-item:hover .navigation-circle-list-item__point:before {
+				transform: scale(1);
+				font-size: 16px;
+			}
+
+			.navigation-circle-list-item:hover .navigation-circle-list-item__point:after {
+				width: 32px;
+				left: 34px;
+			}
+
+			.navigation-circle-list-item:hover .navigation-circle-list-item__meta {
+				opacity: 1;
+			}
+
+			.navigation-circle-list-item:active .navigation-circle-list-item__point:before,
+			.navigation-circle-list-item.active .navigation-circle-list-item__point:before {
+				transform: scale(0.85);
+				color: #000;
+				box-shadow: inset 0px 0px 0px 16px #c644fc;
+				border-color: transparent;
+			}
+
+			.navigation-circle-list-item:active .navigation-circle-list-item__point:after,
+			.navigation-circle-list-item.active .navigation-circle-list-item__point:after {
+				width: 34px;
+				left: 32px;
+			}
+
+			.navigation-circle-list-item:active .navigation-circle-list-item__meta,
+			.navigation-circle-list-item.active .navigation-circle-list-item__meta {
+				opacity: 1;
+			}
+
+			@keyframes animate-in-list {
+				0% {
+					transform: rotate(-540deg);
+				}
+
+				100% {
+					transform: rotate(-90deg);
+				}
+			}
+
+			@keyframes animate-in-svg-circle-mask {
+				0% {
+					stroke-dashoffset: 1005;
+				}
+
+				100% {
+					stroke-dashoffset: 0;
+				}
+			}
+
+			@keyframes animate-in-list-item-point {
+				0% {
+					transform: scale(0);
+				}
+
+				100% {
+					transform: scale(1);
+				}
+			}
+		</style>
+		<!-- mystyle -->
+		<style type="text/css">
+			.logo {
+				width: 371px;
+				height: 88px;
+				position: fixed;
+				left: 65px;
+				top: 35px;
+				z-index: 99;
+				background: url(img/baseIndex.png) no-repeat 0 0;
+			}
+
+			.rules {
+				background: url(img/baseIndex.png) no-repeat 0 0;
+				width: 142px;
+				height: 38px;
+				background-position: -670px 0;
+				position: fixed;
+				right: 58px;
+				top: 63px;
+				z-index: 99;
+			}
+
+			.navigation-circle__list {
+				stroke: rgb(249, 205, 29);
+			}
+
+			.logo2 {
+				background: url(img/baseIndex.png) no-repeat 0 0;
+				width: 360px;
+				height: 88px;
+				position: absolute;
+				left: 35%;
+				top: 41%;
+			}
+
+			.gg {
+				position: fixed;
+				right: -160px;
+				bottom: 20px;
+				z-index: 99;
+			}
+
+			.time {
+				position: fixed;
+				left: 21.5%;
+				top: 85%;
+			}
+
+			.tougao {
+				background: url(img/baseIndex.png) no-repeat 0 0;
+				position: fixed;
+				left: 41%;
+				top: 53%;
+				width: 224px;
+				height: 59px;
+				background-position: -437px -43px;
+				margin: 10px auto 0 auto;
+			}
+
+			.news {
+				position: fixed;
+				left: 50px;
+				top: 150px;
+				width: 500px;
+				height: 800px;
+			}
+
+			.news dl {
+				float: left;
+				color: white;
+				line-height: 30px;
+			}
+
+			.news dl img {
+				width: 200px;
+			}
+
+			.news_right {
+				position: fixed;
+				right: -20px;
+				top: 150px;
+				width: 500px;
+				height: 800px;
+			}
+
+			.news_right dl {
+				float: left;
+				color: white;
+				line-height: 30px;
+			}
+
+			.news_right dl img {
+				width: 200px;
+			}
+
+			.donghua {
+				animation-name: imgAnimation;
+				animation: imgAnimation 2s alternate;
+			}
+			@-webkit-keyframes imgAnimation {
+
+				from,
+				60%,
+				75%,
+				90%,
+				to {
+					animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+				}
+
+				0% {
+					opacity: 0;
+					transform: translate3d(0, 50px, 0);
+				}
+
+				60% {
+					opacity: 1;
+					transform: translate3d(0, 25px, 0);
+				}
+
+				75% {
+					transform: translate3d(0,10px , 0);
+				}
+
+				90% {
+					transform: translate3d(0,5px , 0);
+				}
+
+				100% {
+					opacity: 1;
+					transform: none;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+
+				<div class="swiper-slide" id="s1">
+					<a href="#####">
+						<div class="logo"></div>
+					</a>
+					<a href="#####">
+						<div class="rules"></div>
+					</a>
+					<a href="#####">
+						<div class="logo2"></div>
+						<div class="tougao"></div>
+					</a>
+					
+					<!-- 环装导航 -->
+					<div class="main">
+						<div class="navigation-circle">
+							<div class="navigation-circle__inner">
+								<svg class="navigation-circle-svg navigation-circle-svg--opaque" version="1.1" xmlns="http://www.w3.org/2000/svg"
+								 x="0px" y="0px" viewbox="0 0 320 320" style="enable-background:new 0 0 320 320;">
+									<circle cx="160" cy="160" r="158" fill="none" stroke-width="1" stroke="#c644fc" stroke-linecap="round"
+									 stroke-miterlimit="10" style="stroke-dashoffset:0;stroke-dasharray:none;"></circle>
+								</svg>
+								<svg class="navigation-circle-svg navigation-circle-svg--mask" version="1.1" xmlns="http://www.w3.org/2000/svg"
+								 x="0px" y="0px" viewbox="0 0 320 320" style="enable-background:new 0 0 320 320;">
+									<circle id="mask-circle" cx="160" cy="160" r="158" fill="none" stroke-width="2" stroke="#c644fc"
+									 stroke-linecap="round" stroke-miterlimit="10" style="stroke-dasharray:1005.3088px;"></circle>
+								</svg>
+								<ul class="navigation-circle__list">
+									<li class="navigation-circle-list-item active"><a class="navigation-circle-list-item__point" onClick="onClick(1)"
+										 onmouseenter="calculateOffset(1)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta">
+												<!-- <h3 class="navigation-circle-list-item__title"> -->
+												<!-- </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+									<li class="navigation-circle-list-item"><a class="navigation-circle-list-item__point" onClick="onClick(2)"
+										 onmouseenter="calculateOffset(2)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta  eq1">
+												<!-- <h3 class="navigation-circle-list-item__title">Item #2
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+									<li class="navigation-circle-list-item"><a class="navigation-circle-list-item__point" onClick="onClick(3)"
+										 onmouseenter="calculateOffset(3)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta  eq2">
+												<!-- <h3 class="navigation-circle-list-item__title">
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+									<li class="navigation-circle-list-item"><a class="navigation-circle-list-item__point" onClick="onClick(4)"
+										 onmouseenter="calculateOffset(4)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta  eq3">
+												<!-- <h3 class="navigation-circle-list-item__title">
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+									<li class="navigation-circle-list-item"><a class="navigation-circle-list-item__point" onClick="onClick(5)"
+										 onmouseenter="calculateOffset(5)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta  eq4">
+												<!-- <h3 class="navigation-circle-list-item__title">
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+									<li class="navigation-circle-list-item"><a class="navigation-circle-list-item__point" onClick="onClick(6)"
+										 onmouseenter="calculateOffset(6)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta  eq5">
+												<!-- <h3 class="navigation-circle-list-item__title">
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+									<li class="navigation-circle-list-item"><a class="navigation-circle-list-item__point" onClick="onClick(7)"
+										 onmouseenter="calculateOffset(7)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta  eq6">
+												<!-- <h3 class="navigation-circle-list-item__title">
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+								</ul>
+							</div>
+						</div>
+						<img src="img/gg.png" class="gg">
+					</div>
+
+				</div>
+				<div class="swiper-slide" id="s2">
+					<a href="#####">
+						<div class="logo"></div>
+					</a>
+					<a href="#####">
+						<div class="rules"></div>
+					</a>
+					<a href="#####">
+						<div class="logo2"></div>
+						<div class="tougao"></div>
+					</a>
+					
+					<div class="news">
+						<dl class="news1">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+						<dl class="news2">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+						<dl class="news3">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+						<dl class="news4">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+					</div>
+					<div class="news_right">
+						<dl class="news1">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+						<dl class="news2">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+						<dl class="news3">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+						<dl class="news4">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+					</div>
+
+					<!-- 环装导航 -->
+					<div class="main">
+						<div class="navigation-circle">
+							<div class="navigation-circle__inner">
+								<svg class="navigation-circle-svg navigation-circle-svg--opaque" version="1.1" xmlns="http://www.w3.org/2000/svg"
+								 x="0px" y="0px" viewbox="0 0 320 320" style="enable-background:new 0 0 320 320;">
+									<circle cx="160" cy="160" r="158" fill="none" stroke-width="1" stroke="#c644fc" stroke-linecap="round"
+									 stroke-miterlimit="10" style="stroke-dashoffset:0;stroke-dasharray:none;"></circle>
+								</svg>
+								<svg class="navigation-circle-svg navigation-circle-svg--mask" version="1.1" xmlns="http://www.w3.org/2000/svg"
+								 x="0px" y="0px" viewbox="0 0 320 320" style="enable-background:new 0 0 320 320;">
+									<circle id="mask-circle" cx="160" cy="160" r="158" fill="none" stroke-width="2" stroke="#c644fc"
+									 stroke-linecap="round" stroke-miterlimit="10" style="stroke-dasharray:1005.3088px;"></circle>
+								</svg>
+								<ul class="navigation-circle__list">
+									<li class="navigation-circle-list-item"><a class="navigation-circle-list-item__point" onClick="onClick(1)"
+										 onmouseenter="calculateOffset(1)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta">
+												<!-- <h3 class="navigation-circle-list-item__title">Item #1
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+									<li class="navigation-circle-list-item  active"><a class="navigation-circle-list-item__point" onClick="onClick(2)"
+										 onmouseenter="calculateOffset(2)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta eq1">
+												<!-- <h3 class="navigation-circle-list-item__title">Item #2
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+									<li class="navigation-circle-list-item"><a class="navigation-circle-list-item__point" onClick="onClick(3)"
+										 onmouseenter="calculateOffset(3)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta  eq2">
+												<!-- <h3 class="navigation-circle-list-item__title">
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+									<li class="navigation-circle-list-item"><a class="navigation-circle-list-item__point" onClick="onClick(4)"
+										 onmouseenter="calculateOffset(4)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta  eq3">
+												<!-- <h3 class="navigation-circle-list-item__title">
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+									<li class="navigation-circle-list-item"><a class="navigation-circle-list-item__point" onClick="onClick(5)"
+										 onmouseenter="calculateOffset(5)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta eq4">
+												<!-- <h3 class="navigation-circle-list-item__title">
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+									<li class="navigation-circle-list-item"><a class="navigation-circle-list-item__point" onClick="onClick(6)"
+										 onmouseenter="calculateOffset(6)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta  eq5">
+												<!-- <h3 class="navigation-circle-list-item__title">
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+									<li class="navigation-circle-list-item"><a class="navigation-circle-list-item__point" onClick="onClick(7)"
+										 onmouseenter="calculateOffset(7)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta  eq6">
+												<!-- <h3 class="navigation-circle-list-item__title">
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+								</ul>
+							</div>
+						</div>
+						<img src="img/gg.png" class="gg">
+
+					</div>
+				</div>
+				<div class="swiper-slide" id="s3">
+					<a href="#####">
+						<div class="logo"></div>
+					</a>
+					<a href="#####">
+						<div class="rules"></div>
+					</a>
+					<a href="#####">
+						<div class="logo2"></div>
+						<div class="tougao"></div>
+					</a>
+					
+					<div class="news">
+						<dl class="news1">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+						<dl class="news2">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+						<dl class="news3">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+						<dl class="news4">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+					</div>
+					<div class="news_right">
+						<dl class="news1">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+						<dl class="news2">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+						<dl class="news3">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+						<dl class="news4">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+					</div>
+					<!-- 环装导航 -->
+					<div class="main">
+						<div class="navigation-circle">
+							<div class="navigation-circle__inner">
+								<svg class="navigation-circle-svg navigation-circle-svg--opaque" version="1.1" xmlns="http://www.w3.org/2000/svg"
+								 x="0px" y="0px" viewbox="0 0 320 320" style="enable-background:new 0 0 320 320;">
+									<circle cx="160" cy="160" r="158" fill="none" stroke-width="1" stroke="#c644fc" stroke-linecap="round"
+									 stroke-miterlimit="10" style="stroke-dashoffset:0;stroke-dasharray:none;"></circle>
+								</svg>
+								<svg class="navigation-circle-svg navigation-circle-svg--mask" version="1.1" xmlns="http://www.w3.org/2000/svg"
+								 x="0px" y="0px" viewbox="0 0 320 320" style="enable-background:new 0 0 320 320;">
+									<circle id="mask-circle" cx="160" cy="160" r="158" fill="none" stroke-width="2" stroke="#c644fc"
+									 stroke-linecap="round" stroke-miterlimit="10" style="stroke-dasharray:1005.3088px;"></circle>
+								</svg>
+								<ul class="navigation-circle__list">
+									<li class="navigation-circle-list-item"><a class="navigation-circle-list-item__point" onClick="onClick(1)"
+										 onmouseenter="calculateOffset(1)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta">
+												<!-- <h3 class="navigation-circle-list-item__title">Item #1
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+									<li class="navigation-circle-list-item"><a class="navigation-circle-list-item__point" onClick="onClick(2)"
+										 onmouseenter="calculateOffset(2)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta  eq1">
+												<!-- <h3 class="navigation-circle-list-item__title">Item #2
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+									<li class="navigation-circle-list-item  active"><a class="navigation-circle-list-item__point" onClick="onClick(3)"
+										 onmouseenter="calculateOffset(3)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta  eq2">
+												<!-- <h3 class="navigation-circle-list-item__title">
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+									<li class="navigation-circle-list-item"><a class="navigation-circle-list-item__point" onClick="onClick(4)"
+										 onmouseenter="calculateOffset(4)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta  eq3">
+												<!-- <h3 class="navigation-circle-list-item__title">
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+									<li class="navigation-circle-list-item"><a class="navigation-circle-list-item__point" onClick="onClick(5)"
+										 onmouseenter="calculateOffset(5)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta  eq4">
+												<!-- <h3 class="navigation-circle-list-item__title">
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+									<li class="navigation-circle-list-item"><a class="navigation-circle-list-item__point" onClick="onClick(6)"
+										 onmouseenter="calculateOffset(6)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta  eq5">
+												<!-- <h3 class="navigation-circle-list-item__title">
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+									<li class="navigation-circle-list-item"><a class="navigation-circle-list-item__point" onClick="onClick(7)"
+										 onmouseenter="calculateOffset(7)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta  eq6">
+												<!-- <h3 class="navigation-circle-list-item__title">
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+								</ul>
+							</div>
+						</div>
+						<img src="img/gg.png" class="gg">
+					</div>
+				</div>
+				<div class="swiper-slide" id="s4">
+					<a href="#####">
+						<div class="logo"></div>
+					</a>
+					<a href="#####">
+						<div class="rules"></div>
+					</a>
+					<a href="#####">
+						<div class="logo2"></div>
+						<div class="tougao"></div>
+					</a>
+					
+					<div class="news">
+						<dl class="news1">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+						<dl class="news2">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+						<dl class="news3">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+						<dl class="news4">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+					</div>
+					<div class="news_right">
+						<dl class="news1">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+						<dl class="news2">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+						<dl class="news3">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+						<dl class="news4">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+					</div>
+					<!-- 环装导航 -->
+					<div class="main">
+						<div class="navigation-circle">
+							<div class="navigation-circle__inner">
+								<svg class="navigation-circle-svg navigation-circle-svg--opaque" version="1.1" xmlns="http://www.w3.org/2000/svg"
+								 x="0px" y="0px" viewbox="0 0 320 320" style="enable-background:new 0 0 320 320;">
+									<circle cx="160" cy="160" r="158" fill="none" stroke-width="1" stroke="#c644fc" stroke-linecap="round"
+									 stroke-miterlimit="10" style="stroke-dashoffset:0;stroke-dasharray:none;"></circle>
+								</svg>
+								<svg class="navigation-circle-svg navigation-circle-svg--mask" version="1.1" xmlns="http://www.w3.org/2000/svg"
+								 x="0px" y="0px" viewbox="0 0 320 320" style="enable-background:new 0 0 320 320;">
+									<circle id="mask-circle" cx="160" cy="160" r="158" fill="none" stroke-width="2" stroke="#c644fc"
+									 stroke-linecap="round" stroke-miterlimit="10" style="stroke-dasharray:1005.3088px;"></circle>
+								</svg>
+								<ul class="navigation-circle__list">
+									<li class="navigation-circle-list-item"><a class="navigation-circle-list-item__point" onClick="onClick(1)"
+										 onmouseenter="calculateOffset(1)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta">
+												<!-- <h3 class="navigation-circle-list-item__title">Item #1
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+									<li class="navigation-circle-list-item"><a class="navigation-circle-list-item__point" onClick="onClick(2)"
+										 onmouseenter="calculateOffset(2)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta eq1">
+												<!-- <h3 class="navigation-circle-list-item__title">Item #2
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+									<li class="navigation-circle-list-item"><a class="navigation-circle-list-item__point" onClick="onClick(3)"
+										 onmouseenter="calculateOffset(3)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta eq2">
+												<!-- <h3 class="navigation-circle-list-item__title">
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+									<li class="navigation-circle-list-item  active"><a class="navigation-circle-list-item__point" onClick="onClick(4)"
+										 onmouseenter="calculateOffset(4)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta eq3">
+												<!-- <h3 class="navigation-circle-list-item__title">
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+									<li class="navigation-circle-list-item"><a class="navigation-circle-list-item__point" onClick="onClick(5)"
+										 onmouseenter="calculateOffset(5)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta  eq4">
+												<!-- <h3 class="navigation-circle-list-item__title">
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+									<li class="navigation-circle-list-item"><a class="navigation-circle-list-item__point" onClick="onClick(6)"
+										 onmouseenter="calculateOffset(6)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta eq5">
+												<!-- <h3 class="navigation-circle-list-item__title">
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+									<li class="navigation-circle-list-item"><a class="navigation-circle-list-item__point" onClick="onClick(7)"
+										 onmouseenter="calculateOffset(7)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta eq6">
+												<!-- <h3 class="navigation-circle-list-item__title">
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+								</ul>
+							</div>
+						</div>
+						<img src="img/gg.png" class="gg">
+					</div>
+				</div>
+				<div class="swiper-slide" id="s5">
+					<a href="#####">
+						<div class="logo"></div>
+					</a>
+					<a href="#####">
+						<div class="rules"></div>
+					</a>
+					<a href="#####">
+						<div class="logo2"></div>
+						<div class="tougao"></div>
+					</a>
+					
+					<div class="news">
+						<dl class="news1">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+						<dl class="news2">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+						<dl class="news3">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+						<dl class="news4">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+					</div>
+					<div class="news_right">
+						<dl class="news1">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+						<dl class="news2">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+						<dl class="news3">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+						<dl class="news4">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+					</div>
+					<!-- 环装导航 -->
+					<div class="main">
+						<div class="navigation-circle">
+							<div class="navigation-circle__inner">
+								<svg class="navigation-circle-svg navigation-circle-svg--opaque" version="1.1" xmlns="http://www.w3.org/2000/svg"
+								 x="0px" y="0px" viewbox="0 0 320 320" style="enable-background:new 0 0 320 320;">
+									<circle cx="160" cy="160" r="158" fill="none" stroke-width="1" stroke="#c644fc" stroke-linecap="round"
+									 stroke-miterlimit="10" style="stroke-dashoffset:0;stroke-dasharray:none;"></circle>
+								</svg>
+								<svg class="navigation-circle-svg navigation-circle-svg--mask" version="1.1" xmlns="http://www.w3.org/2000/svg"
+								 x="0px" y="0px" viewbox="0 0 320 320" style="enable-background:new 0 0 320 320;">
+									<circle id="mask-circle" cx="160" cy="160" r="158" fill="none" stroke-width="2" stroke="#c644fc"
+									 stroke-linecap="round" stroke-miterlimit="10" style="stroke-dasharray:1005.3088px;"></circle>
+								</svg>
+								<ul class="navigation-circle__list">
+									<li class="navigation-circle-list-item"><a class="navigation-circle-list-item__point" onClick="onClick(1)"
+										 onmouseenter="calculateOffset(1)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta">
+												<!-- <h3 class="navigation-circle-list-item__title">Item #1
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+									<li class="navigation-circle-list-item"><a class="navigation-circle-list-item__point" onClick="onClick(2)"
+										 onmouseenter="calculateOffset(2)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta  eq1">
+												<!-- <h3 class="navigation-circle-list-item__title">Item #2
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+									<li class="navigation-circle-list-item"><a class="navigation-circle-list-item__point" onClick="onClick(3)"
+										 onmouseenter="calculateOffset(3)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta eq2">
+												<!-- <h3 class="navigation-circle-list-item__title">
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+									<li class="navigation-circle-list-item"><a class="navigation-circle-list-item__point" onClick="onClick(4)"
+										 onmouseenter="calculateOffset(4)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta eq3">
+												<!-- <h3 class="navigation-circle-list-item__title">
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+									<li class="navigation-circle-list-item  active"><a class="navigation-circle-list-item__point" onClick="onClick(5)"
+										 onmouseenter="calculateOffset(5)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta  eq4">
+												<!-- <h3 class="navigation-circle-list-item__title">
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+									<li class="navigation-circle-list-item"><a class="navigation-circle-list-item__point" onClick="onClick(6)"
+										 onmouseenter="calculateOffset(6)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta  eq5">
+												<!-- <h3 class="navigation-circle-list-item__title">
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+									<li class="navigation-circle-list-item"><a class="navigation-circle-list-item__point" onClick="onClick(7)"
+										 onmouseenter="calculateOffset(7)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta eq6">
+												<!-- <h3 class="navigation-circle-list-item__title">
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+								</ul>
+							</div>
+						</div>
+						<img src="img/gg.png" class="gg">
+					</div>
+				</div>
+				<div class="swiper-slide" id="s6">
+					<a href="#####">
+						<div class="logo"></div>
+					</a>
+					<a href="#####">
+						<div class="rules"></div>
+					</a>
+					<a href="#####">
+						<div class="logo2"></div>
+						<div class="tougao"></div>
+					</a>
+					
+					<div class="news">
+						<dl class="news1">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+						<dl class="news2">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+						<dl class="news3">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+						<dl class="news4">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+					</div>
+					<div class="news_right">
+						<dl class="news1">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+						<dl class="news2">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+						<dl class="news3">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+						<dl class="news4">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+					</div>
+					<!-- 环装导航 -->
+					<div class="main">
+						<div class="navigation-circle">
+							<div class="navigation-circle__inner">
+								<svg class="navigation-circle-svg navigation-circle-svg--opaque" version="1.1" xmlns="http://www.w3.org/2000/svg"
+								 x="0px" y="0px" viewbox="0 0 320 320" style="enable-background:new 0 0 320 320;">
+									<circle cx="160" cy="160" r="158" fill="none" stroke-width="1" stroke="#c644fc" stroke-linecap="round"
+									 stroke-miterlimit="10" style="stroke-dashoffset:0;stroke-dasharray:none;"></circle>
+								</svg>
+								<svg class="navigation-circle-svg navigation-circle-svg--mask" version="1.1" xmlns="http://www.w3.org/2000/svg"
+								 x="0px" y="0px" viewbox="0 0 320 320" style="enable-background:new 0 0 320 320;">
+									<circle id="mask-circle" cx="160" cy="160" r="158" fill="none" stroke-width="2" stroke="#c644fc"
+									 stroke-linecap="round" stroke-miterlimit="10" style="stroke-dasharray:1005.3088px;"></circle>
+								</svg>
+								<ul class="navigation-circle__list">
+									<li class="navigation-circle-list-item"><a class="navigation-circle-list-item__point" onClick="onClick(1)"
+										 onmouseenter="calculateOffset(1)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta">
+												<!-- <h3 class="navigation-circle-list-item__title">Item #1
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+									<li class="navigation-circle-list-item"><a class="navigation-circle-list-item__point" onClick="onClick(2)"
+										 onmouseenter="calculateOffset(2)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta eq1">
+												<!-- <h3 class="navigation-circle-list-item__title">Item #2
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+									<li class="navigation-circle-list-item"><a class="navigation-circle-list-item__point" onClick="onClick(3)"
+										 onmouseenter="calculateOffset(3)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta eq2">
+												<!-- <h3 class="navigation-circle-list-item__title">
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+									<li class="navigation-circle-list-item"><a class="navigation-circle-list-item__point" onClick="onClick(4)"
+										 onmouseenter="calculateOffset(4)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta eq3">
+												<!-- <h3 class="navigation-circle-list-item__title">
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+									<li class="navigation-circle-list-item"><a class="navigation-circle-list-item__point" onClick="onClick(5)"
+										 onmouseenter="calculateOffset(5)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta eq4">
+												<!-- <h3 class="navigation-circle-list-item__title">
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+									<li class="navigation-circle-list-item active"><a class="navigation-circle-list-item__point" onClick="onClick(6)"
+										 onmouseenter="calculateOffset(6)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta  eq5">
+												<!-- <h3 class="navigation-circle-list-item__title">
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+									<li class="navigation-circle-list-item"><a class="navigation-circle-list-item__point" onClick="onClick(7)"
+										 onmouseenter="calculateOffset(7)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta eq6">
+												<!-- <h3 class="navigation-circle-list-item__title">
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+								</ul>
+							</div>
+						</div>
+						<img src="img/gg.png" class="gg">
+					</div>
+				</div>
+				<div class="swiper-slide" id="s7">
+					<a href="#####">
+						<div class="logo"></div>
+					</a>
+					<a href="#####">
+						<div class="rules"></div>
+					</a>
+					<a href="#####">
+						<div class="logo2"></div>
+						<div class="tougao"></div>
+					</a>
+					
+					<div class="news">
+						<dl class="news1">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+						<dl class="news2">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+						<dl class="news3">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+						<dl class="news4">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+					</div>
+					<div class="news_right">
+						<dl class="news1">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+						<dl class="news2">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+						<dl class="news3">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+						<dl class="news4">
+							<img src="img/258.jpg">
+							<dt>哭泣之眼——赫尔德</dt>
+							<dd>作者：柯基~金毛</dd>
+						</dl>
+					</div>
+					<!-- 环装导航 -->
+					<div class="main">
+						<div class="navigation-circle">
+							<div class="navigation-circle__inner">
+								<svg class="navigation-circle-svg navigation-circle-svg--opaque" version="1.1" xmlns="http://www.w3.org/2000/svg"
+								 x="0px" y="0px" viewbox="0 0 320 320" style="enable-background:new 0 0 320 320;">
+									<circle cx="160" cy="160" r="158" fill="none" stroke-width="1" stroke="#c644fc" stroke-linecap="round"
+									 stroke-miterlimit="10" style="stroke-dashoffset:0;stroke-dasharray:none;"></circle>
+								</svg>
+								<svg class="navigation-circle-svg navigation-circle-svg--mask" version="1.1" xmlns="http://www.w3.org/2000/svg"
+								 x="0px" y="0px" viewbox="0 0 320 320" style="enable-background:new 0 0 320 320;">
+									<circle id="mask-circle" cx="160" cy="160" r="158" fill="none" stroke-width="2" stroke="#c644fc"
+									 stroke-linecap="round" stroke-miterlimit="10" style="stroke-dasharray:1005.3088px;"></circle>
+								</svg>
+								<ul class="navigation-circle__list">
+									<li class="navigation-circle-list-item "><a class="navigation-circle-list-item__point" onClick="onClick(1)"
+										 onmouseenter="calculateOffset(1)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta">
+												<!-- <h3 class="navigation-circle-list-item__title">Item #1
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+									<li class="navigation-circle-list-item"><a class="navigation-circle-list-item__point" onClick="onClick(2)"
+										 onmouseenter="calculateOffset(2)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta eq1">
+												<!-- <h3 class="navigation-circle-list-item__title">Item #2
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+									<li class="navigation-circle-list-item"><a class="navigation-circle-list-item__point" onClick="onClick(3)"
+										 onmouseenter="calculateOffset(3)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta eq2">
+												<!-- <h3 class="navigation-circle-list-item__title">
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+									<li class="navigation-circle-list-item"><a class="navigation-circle-list-item__point" onClick="onClick(4)"
+										 onmouseenter="calculateOffset(4)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta eq3">
+												<!-- <h3 class="navigation-circle-list-item__title">
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+									<li class="navigation-circle-list-item"><a class="navigation-circle-list-item__point" onClick="onClick(5)"
+										 onmouseenter="calculateOffset(5)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta eq4">
+												<!-- <h3 class="navigation-circle-list-item__title">
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+									<li class="navigation-circle-list-item"><a class="navigation-circle-list-item__point" onClick="onClick(6)"
+										 onmouseenter="calculateOffset(6)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta eq5">
+												<!-- <h3 class="navigation-circle-list-item__title">
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+									<li class="navigation-circle-list-item active"><a class="navigation-circle-list-item__point" onClick="onClick(7)"
+										 onmouseenter="calculateOffset(7)" onMouseLeave="onMouseLeave()">
+											<div class="navigation-circle-list-item__meta eq6">
+												<!-- <h3 class="navigation-circle-list-item__title">
+								  </h3> -->
+												<h4 class="navigation-circle-list-item__subtitle"></h4>
+											</div>
+										</a></li>
+								</ul>
+							</div>
+						</div>
+						<img src="img/gg.png" class="gg">
+					</div>
+				</div>
+			</div>
+			<!--右侧按钮-->
+			<div class="swiper-pagination"></div>
+		</div>
+		<!--底部按钮-->
+		<div class="swiper-button-next">
+			<div class="next-but-arraw"><img src="img/btn-next.png"></div>
+		</div>
+	</body>
+	<script src="js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		// 导航栏js
+		const pointCount = 7;
+		const circleRadius = 160;
+		const startAnimDelta = 5;
+		const circumference = Math.PI * circleRadius * 2;
+
+		var selectedItemIndex = -1;
+
+		var circlePath = document.getElementById('mask-circle');
+
+		/**
+		 * @description On Mouse Leave event handler for points
+		 */
+		const onMouseLeave = () => {
+			let index = (selectedItemIndex !== -1) ? selectedItemIndex : 0;
+			calculateOffset(index);
+		};
+
+		/**
+		 * @description On Click event handler for points
+		 * @param {Number} index - Index of list item
+		 */
+		const onClick = (index) => {
+			//If already selected, deselect
+			selectedItemIndex = (selectedItemIndex === index) ? -1 : index;
+			calculateOffset(index);
+
+			//Find active item, deselect
+			let activeListItem = document.querySelectorAll('.navigation-circle-list-item.active');
+			if (activeListItem.length > 0) activeListItem[0].classList.remove('active');
+
+			//Find new item by index, select
+			let listItem = document.querySelectorAll('.navigation-circle-list-item:nth-of-type(' + selectedItemIndex + ')');
+			if (listItem.length > 0) listItem[0].classList.add('active');
+		};
+
+		/**
+		 * @description - Calculate offset for circle path by index of list item
+		 * @param {Number} index - Index of list item
+		 */
+		const calculateOffset = (index = 0) => {
+			let offset = 0;
+
+			if (index !== 0) offset = (circumference / pointCount) * (pointCount - index);
+
+			circlePath.style.strokeDashoffset = `${offset}px`;
+		};
+
+		// INTRO
+
+		let buffer = 500;
+		let delay = 1000 * (1 + (pointCount / startAnimDelta) - (1 / startAnimDelta)) + buffer;
+
+		setTimeout(() => onClick(1), delay);
+	</script>
+
+	<!-- swiper -->
+	<script type="text/javascript">
+		var swiper = new Swiper('.swiper-container', {
+			onTransitionStart: function(mySwiper) {
+				$('.logo2').addClass('donghua');
+				$('.tougao').addClass('donghua');
+			},
+			onTransitionEnd: function(mySwiper) {
+				$('.logo2').removeClass('donghua');
+				$('.tougao').removeClass('donghua');
+			},
+			pagination: '.swiper-pagination',
+			paginationClickable: true,
+			direction: 'vertical',
+			// 如果需要前进后退按钮
+			nextButton: '.swiper-button-next',
+			keyboardControl: true,
+			mousewheelControl: true,
+			direction: 'vertical',
+			mousewheelForceToAxis: true,
+			loop: true,
+			// autoplay: 3000
+		});
+	</script>
+
+	<script type="text/javascript">
+		// 圆盘单击跳转
+		$('.navigation-circle__list>li').click(function() {
+			$('.swiper-pagination span').eq($(this).index()).trigger('click');
+		})
+	</script>
+
+</html>

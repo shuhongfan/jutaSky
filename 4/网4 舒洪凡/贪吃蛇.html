@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>贪吃蛇</title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+				list-style: none;
+				text-decoration: none;
+			}
+			#warp{
+				width: 500px;
+				margin: 0 auto;
+			}
+			#snake {
+				width: 500px;
+				height: 500px;
+				border: 1px solid #000;
+				position: relative;
+				margin: auto
+			}
+
+			#snake_head {
+				width: 25px;
+				height: 25px;
+				background: red;
+				position: absolute;
+				top: 0;
+				left: 50px;
+				z-index: 1;
+			}
+
+			.snake_body {
+				width: 25px;
+				height: 25px;
+				position: absolute;
+				background: forestgreen;
+			}
+
+			.snake_food {
+				width: 25px;
+				height: 25px;
+				background: yellow;
+				position: absolute;
+			}
+			#banner{
+				position: relative;
+				left: 0px;
+				top: 0px;
+			}
+			#banner ul li {
+				float: left;
+				margin-right: 40px;
+			}
+			#banner ul li a{
+				display: block;
+				width: 50px;
+				height: 20px;
+				background: pink;
+				color: black;
+				text-align:center;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="warp">
+			<!-- 地图 -->
+			<div id="snake">
+				<!-- 蛇 -->
+				<div id="snake_head"></div>
+				<div class="snake_body" style="left:25px;top:0;"></div>
+				<div class="snake_body" style="left:50px;top:0;"></div>
+				<!-- 食物 -->
+				<div class="snake_food"></div>
+			</div>
+			
+			<div id="banner">
+				<ul>
+					<li><a href="#####" id="start">开始</a></li>
+					<li><a href="#####" id="stop">暂停</a></li>
+					<li><a href="#####" id="over">结束</a></li>
+					<li><p>总分：</p></li>
+					<li><a href="#####" id="sum">0</a></li>
+				</ul>
+			</div>
+		</div>
+		
+	</body>
+	<script type="text/javascript">
+		// 一.获取元素
+		//以id获取地图元素
+		var wrap = document.getElementById('snake');
+		//以id获取蛇头元素
+		var head = document.getElementById('snake_head');
+		//以class名获取所有蛇身元素（是一个数组）
+		var body = document.getElementsByClassName('snake_body');
+		//以class名获取食物元素（只有一个）
+		var food = document.getElementsByClassName('snake_food')[0];
+		// 以id获取按钮div
+		var banner = document.getElementById('banner');
+		// 以id获取暂停按钮
+		var stop = document.getElementById('stop');
+		// 以id获取开始按钮
+		var start = document.getElementById('start');
+		// 以id获取结束按钮
+		var over = document.getElementById('over');
+		// 以id获取得分
+		var sum = document.getElementById('sum');
+
+		// 二.设置常用变量
+		var box = 25; //蛇的移动步长
+		var boombol = true; //用于判断是否吃到食物
+		var timer = null; //让蛇不断移动的定时器变量
+		var runbol = true; //判断短时间内的多次按键
+		var l = 1;// 原始方向为向右,l为正向右运动,l为负数向左运动,l为0平移
+		var t = 0;// 原始方向为向下,t为正向下运动,t为负数向上运动,t为0平移
+		var summ=0;
+
+		// 三.绑定键盘事件
+		// 利用键盘方向键改变蛇的移动方向，通过检测keyCode的值来确定按键，如 37代表 ← 、38代表 ↑、39代表→、40代表↓
+		// 蛇在向右走的时候，按左方向键或按右方向键时依旧往右走
+		document.onkeyup = function(e) {
+			var ee = e || window.event;
+			// 当移动函数没有执行完毕时按下键盘直接返回，使按键无效
+			if (!runbol) {
+				return;
+			}
+			// 把 l改变为负值 移动时相乘就会为负则向左走，同时 t要置为0 不然会斜着走
+			switch (e.keyCode) {
+				// 左
+				case 37:
+					{
+						// 把移动布尔值置否
+						runbol = false;
+						// 如果蛇正在往右走时按下左键 break接着无效
+						if (l == 1) {break;}
+						l = -1;
+						t = 0;
+						break;
+					}
+					// 上
+				case 38:
+					{
+						runbol = false;
+						if (t == 1) {break;}
+						l = 0;
+						t = -1;
+						break;
+					}
+					// 右
+				case 39:
+					{
+						runbol = false;
+						if (l == -1) {break;}
+						l = 1;
+						t = 0;
+						break;
+					}
+					// 下
+				case 40:
+					{
+						runbol = false;
+						if (t == -1) {break;}
+						l = 0;
+						t = 1;
+						break;
+					}
+			}
+		}
+
+
+		// 四.蛇移动函数
+			// 蛇移动有两种情况：1.蛇吃到食物 2.蛇没有吃到食物
+			// 游戏结束判定有两种情况：1.蛇头撞到墙壁 2.蛇头撞到自己的身体
+		function move() {
+			// 获取蛇头部的左和上偏移量
+			var headX = head.offsetLeft;
+			var headY = head.offsetTop;
+			// 直接写蛇头下一个移动位置 用于判断撞墙
+			var nextx = headX + box * l;
+			var nexty = headY + box * t;
+
+			// 判断撞墙
+			if (nextx < 0 || nextx > 475 || nexty < 0 || nexty > 475) {
+				gameOver();
+			}
+
+			// 判断撞到蛇身 利用循环遍历每一个body 
+			// 并判断当头的下一次移动位置为其中一个重合时即跟撞墙一样结束游戏
+			for (var i = 0; i < body.length; ++i) {
+				if (nextx == body[i].offsetLeft && nexty == body[i].offsetTop) {
+					gameOver();
+				}
+			}
+
+			// 经过判断后蛇才移动
+			head.style.left = nextx + 'px';
+			head.style.top = nexty + 'px';
+
+			// 如果吃到食物 创造一个蛇身 位置为头部的偏移量 
+			// 数组中的位置为蛇头之后
+			// 最后把布尔值恢复
+			if (!boombol) {
+				var div = document.createElement('div');
+				div.className = 'snake_body';
+				div.style.left = headX + 'px';
+				div.style.top = headY + 'px';
+				wrap.insertBefore(div, body[0]);
+				boombol = true;
+				summ++;
+			}
+			// 没有吃到食物
+			// 移动最后一个蛇身div为头部偏移量 并在数组中把它插入到头部后面
+			else {
+				body[body.length - 1].style.left = headX + 'px';
+				body[body.length - 1].style.top = headY + 'px';
+				wrap.insertBefore(body[body.length - 1], body[0]);
+			}
+			// 判断是否吃到食物
+			if (head.offsetLeft == food.offsetLeft && head.offsetTop == food.offsetTop) {
+				// 吃到就改变食物的位置
+				creatFood();
+				// 吃到则把布尔值置为否，在下次执行移动函数进入if语句
+				boombol = false;
+			}
+			// 移动完应该把布尔值置为真 
+			// 表示移动函数执行完毕 可以接受下一个按键命令
+			runbol = true;
+			sum.innerText=summ;
+		}
+		
+		// 游戏结束
+		function gameOver() {
+			// 撞到蛇身或墙壁  清除定时器 并弹窗 return
+			clearInterval(timer);
+			alert('游戏结束!!!!');
+			return false;
+		}
+		
+		// 五.设置随机食物位置函数
+		// 1.随机位置不能在蛇身上 2.随机位置不能越出地图
+		
+		// 随机函数
+		function rnd(max, min) {
+			return Math.round(Math.random() * (max - min) + min);
+		}
+		// 制造食物
+		function creatFood() {
+			var bol = true;
+			var x = rnd(475, 0);
+			var y = rnd(475, 0);
+			// parseInt(x/25)拿到在随机数相对于25的位数，保证食物在格子上
+			var foodx = parseInt(x / 25) * 25;
+			var foody = parseInt(y / 25) * 25;
+
+			for (var i = 0; i < body.length - 1; ++i) {
+				//循环判断食物是否出现在蛇身
+				if (foodx == body[i].offsetLeft && foody == body[i].offsetTop) {
+					creatFood();
+					bol = false;
+					break;
+				}
+			}
+			if (bol) {
+				food.style.left = foodx + 'px';
+				food.style.top = foody + 'px';
+			}
+		}
+		
+		
+		// 六.调用函数,开始计时器
+		
+		// 开始游戏
+		start.onclick=function  () {
+			timer = setInterval(move, 200);
+			creatFood();
+		}
+		// 暂停游戏
+		stop.onclick=function  () {
+			clearInterval(timer);
+			alert('暂停中!!!!');
+		}
+		// 结束游戏
+		over.onclick=function  () {
+			gameOver();
+		}
+	</script>
+</html>

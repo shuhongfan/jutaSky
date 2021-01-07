@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>八键钢琴</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				text-decoration: none;
+			}
+
+			#warp {
+				width: 700px;
+				margin: 0 auto;
+			}
+
+			ul li {
+				float: left;
+			}
+
+			ul li button {
+				width: 70px;
+				height: 500px;
+				
+			}
+
+			input {
+				width: 20px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="warp">
+			<ul>
+				<li><button type="button">1</button></li>
+				<li><button type="button">2</button></li>
+				<li><button type="button">3</button></li>
+				<li><button type="button">4</button></li>
+				<li><button type="button">5</button></li>
+				<li><button type="button">6</button></li>
+				<li><button type="button">7</button></li>
+				<li><button type="button">8</button></li>
+			</ul>
+		</div>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		// 获取ul
+		var oul = document.querySelector("ul");
+		// 获取所有button
+		var abtn = document.querySelectorAll("button");
+		// 键盘按下
+		window.onkeydown = function(e) {
+			call(e);
+		}
+		// bottom绑定键值
+		var nums = [49, 50, 51, 52, 53, 54, 55, 56];
+		for (var i = 0; i < abtn.length; i++) {
+			abtn[i].index = nums[i];
+			abtn[i].onclick = function() {
+				call(this.index);
+			}
+		}
+		// call函数
+		function call(e) {
+			switch (e.keyCode || e) {
+				// 数字1
+				case 49:
+					var audio = new Audio();
+					audio.src = "aud/1.mp3";
+					audio.play();
+					console.log();
+					break;
+				// 数字2
+				case 50:
+					var audio = new Audio();
+					audio.src = "aud/2.mp3";
+					audio.play();
+					break;
+				// 数字3
+				case 51:
+					var audio = new Audio();
+					audio.src = "aud/3.mp3";
+					audio.play();
+					break;
+				// 数字4
+				case 52:
+					var audio = new Audio();
+					audio.src = "aud/4.mp3";
+					audio.play();
+					break;
+				// 数字5
+				case 53:
+					var audio = new Audio();
+					audio.src = "aud/5.mp3";
+					audio.play();
+					break;
+				// 数字6
+				case 54:
+					var audio = new Audio();
+					audio.src = "aud/6.mp3";
+					audio.play();
+					break;
+				// 数字7
+				case 55:
+					var audio = new Audio();
+					audio.src = "aud/7.mp3";
+					audio.play();
+					break;
+				// 数字8
+				case 56:
+					var audio = new Audio();
+					audio.src = "aud/8.mp3";
+					audio.play();
+					break;
+			}
+		}
+		
+	</script>
+</html>

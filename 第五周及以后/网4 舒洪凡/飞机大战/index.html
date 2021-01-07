@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>飞机大战</title>
+		<link rel="stylesheet" type="text/css" href="css/clear%20style.css" />
+		<style>
+			/*基础部分样式*/
+       body{
+           background: #000;
+       }
+        #warp{
+            position: relative;
+            width: 300px;
+            height: 500px;
+            margin: 50px auto;
+            border: 10px solid #fff;
+        }
+        #interface{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: #000000;
+        }
+        /*标题样式*/
+        .tit{
+            padding-top: 50px;
+            font-size: 30px;
+            color: #fff;
+            text-align: center;
+        }
+        /*等级模式*/
+        .level{
+            width: 130px;
+            height: 40px;
+            margin: 50px auto;
+            background: #fff;
+            line-height: 40px;
+            font-size: 16px;
+            color: #000;
+            font-weight: bolder;
+            text-align: center;
+            border-radius: 5px;
+            letter-spacing: 5px;
+            cursor: pointer;
+        }
+        /*飞机样式*/
+        .airplane{
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: url("img/plane_0.png") 0 0/60px 60px no-repeat;
+        }
+        /*子弹样式*/
+        .shell{
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: url("img/fire.png")0 0/30px 30px no-repeat;
+        }
+        /*敌人的样式*/
+        .enemy{
+            position: absolute;
+            width: 45px;
+            height: 40px;
+            background: url("img/enemy_small.png") 0 0/45px 40px no-repeat;
+        }
+        /*结束游戏*/
+        .end-box{
+            width: 200px;
+            height: 400px;
+            border: 50px solid #000;
+            background: #ffffff;
+            text-align: center;
+        }
+        .gameover{
+            margin-top: 50px;
+            font-size: 30px;
+            color: #000;
+
+        }
+        .again{
+            width: 140px;
+            height: 40px;
+            margin: 50px auto;
+            line-height: 40px;
+            background: #000;
+            color: #fff;
+            font-size: 22px;
+            text-align: center;
+            cursor: pointer;
+        }
+        /*分数盒子*/
+       .count{
+           width: 120px;
+           height: 30px;
+            font-size: 20px;
+           line-height: 30px;
+           color: #fff;
+        }
+        p{
+            margin-top: 50px;
+            font-size: 20px;
+            line-height: 30px;
+            color: #000000;
+            font-weight: bolder;
+        }
+
+    </style>
+	</head>
+	<body>
+		<div id="warp">
+			<!--游戏界面-->
+			<div id="interface"></div>
+		</div>
+	</body>
+	<script src="js/jianrong.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/timet.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		(function airWithEnemyFight() {
+			var oInterface = document.getElementById("interface"); //获取游戏界面
+
+			//初始画游戏界面
+			init();
+			
+			// 游戏界面
+			function init() {
+				//创建标题
+				var tit = document.createElement("h2"),
+					levelArr = ["简单模式", "一般模式", "难度模式", "变态模式"],
+					num = 0;
+				tit.innerHTML = "飞机大战";
+				tit.className = "tit";
+				oInterface.appendChild(tit);
+				//创建难度等级
+				for (var i = 0; i < levelArr.length; i++) {
+					var level = document.createElement("div");
+					level.className = "level";
+					level.innerHTML = levelArr[i];
+					level.index = i;
+					oInterface.appendChild(level);
+					//等级的鼠标移入和鼠标移出的事件
+					level.onmouseenter = function() {
+						this.style.backgroundColor = "#ababab";
+						this.style.color = "#fff";
+					};
+					level.onmouseleave = function() {
+						this.style.backgroundColor = "#fff";
+						this.style.color = "#000";
+					};
+					//鼠标点击事件
+					level.onclick = function(e) {
+						beganToFight(e, this.index)
+					};
+				};
+				//开始战斗函数
+				function beganToFight(e, level) {
+					//情况游戏界面为创建元素准备
+					oInterface.innerHTML = "";
+
+					//创建元素部分
+					// createEnemy(e,level);
+					oInterface.enemyTimer = setInterval(createEnemy, [500, 200, 100, 50][level]);
+
+					createAirplane(e, level); //创建我军飞机
+					count();
+
+				};
+				//创建我军飞机
+				function createAirplane(e, level) {
+					var airplane = document.createElement("div");
+					airplane.className = "airplane";
+					oInterface.appendChild(airplane);
+					//设置飞机的位置
+					airplane.style.top = e.pageY - offsetVal(oInterface).top - airplane.offsetHeight / 2 + "px";
+					airplane.style.left = e.pageX - offsetVal(oInterface).left - airplane.offsetWidth / 2 + "px";
+					//给飞机添加移动事件
+					document.onmousemove = function(e) { 
+						//给文档直接添加而不是给界面添加，是因为鼠标可能移出界面，飞机就不会动了
+						var
+							top = e.pageY - offsetVal(oInterface).top - airplane.offsetHeight / 2,
+							left = e.pageX - offsetVal(oInterface).left - airplane.offsetWidth / 2;
+						//边界值
+						top = Math.min(top, oInterface.clientHeight - airplane.offsetHeight);
+						top = Math.max(top, 0);
+						left = Math.max(left, -airplane.offsetHeight / 2);
+						left = Math.min(left, oInterface.clientWidth - airplane.offsetHeight / 2);
+						//赋值
+						airplane.style.left = left + "px";
+						airplane.style.top = top + "px";
+					};
+					document.onmouseleave = function() {
+						this.onmousemove = null;
+					};
+					
+					//创建子弹
+					oInterface.shellTimer = setInterval(createShell, [250, 150, 100, 50][level]);
+		
+					function createShell(e, level) {
+						var shell = document.createElement("div"),
+							shellSteep = 5;
+						shell.className = "shell";
+						oInterface.appendChild(shell);
+						shell.style.top = airplane.offsetTop - shell.offsetHeight + "px";
+						shell.style.left = airplane.offsetLeft + airplane.offsetWidth / 2 - shell.offsetWidth / 2 + "px";
+						
+						//子弹的运动
+						shellRun();
+
+						function shellRun() {
+							var top = shell.offsetTop;
+							top -= shellSteep;
+							if (top <= 0) {
+								oInterface.removeChild(shell);
+								cancelAnimationFrame(shell.timer);
+							} else {
+								airplane.parentNode && (shell.timer = requestAnimationFrame(shellRun));
+								// debugger
+							};
+							shell.style.top = top + "px";
+						};
+					};
+					return airplane;
+
+				};
+				
+				//创建敌军
+				function createEnemy(e, level) {
+					var enemy = document.createElement("div"),
+						enemySteep = Math.random() * 5 + 1;
+					enemy.className = "enemy";
+					oInterface.appendChild(enemy);
+					//敌军的坐标值赋值
+					enemy.style.top = 0;
+					// console.log(enemy.offsetParent)
+					enemy.style.left = Math.ceil(Math.random() * (oInterface.clientWidth - enemy.offsetWidth)) + "px"; //我控制在界面内
+					// enemy.style.left=Math.random()*255+1+"px";
+					enemyRun();
+					//敌军的运动
+					function enemyRun() {
+						var enemyTop = enemy.offsetTop;
+						enemyTop += enemySteep;
+						var countB = document.getElementsByClassName("count")[0];
+						if (enemyTop >= oInterface.clientHeight - enemy.offsetHeight) {
+							num--;
+							countB.innerHTML = num * 10;
+
+							/*第二种加分数
+							oInterface.score-=10;
+							countB.innerHTML=oInterface.score;
+							*/
+							oInterface.removeChild(enemy)
+							cancelAnimationFrame(enemy.timer);
+						} else {
+							//判断敌军每一次运动是否和我军飞机以及子弹爆炸
+							var aShell = document.getElementsByClassName("shell"),
+								air = document.getElementsByClassName("airplane")[0];
+
+							//判断是否于子弹碰撞
+							for (var i = 0; i < aShell.length; i++) {
+								if (!isCrash(aShell[i], enemy)) {
+									boom(enemy, 0);
+									num++;
+									countB.innerHTML = num * 10;
+
+									cancelAnimationFrame(enemy.timer);
+									// console.log(num)
+
+									/*第二种加分
+									 oInterface.score+=10;
+									countB.innerHTML=oInterface.score;
+									*/
+									cancelAnimationFrame(aShell[i].timer); //让碰撞到的子弹停止运动
+									// cancelAnimationFrame(enemy.timer);//让碰撞到的敌军停止运动，这一步不需要因为被删除了的元素在文档中就不存在了
+									oInterface.removeChild(aShell[i]);
+									oInterface.removeChild(enemy);
+									return false;
+								}
+							};
+							// console.log(air)//同样是飞机移除后的打印，为什么打印air这里是undefind--undefined，air.parentNode报错呢Cannot read property 'parentNode' of undefined
+							/*问题一：
+							两种方式获取飞机对象，为了在碰撞 的时候使用这个对象：
+							第一种：函数的返回值付给一个变量，使用这个变量，打印air依旧是元素呢？为什么这时候是打印air.parentNode是undefined？
+							第二种：在后面获取飞机这个元素：同样是飞机移除后的打印，为什么打印air这里是undefind，air.parentNode报错呢？
+							* */
+							//判断敌军和我军飞机碰撞
+							if (air && air.parentNode && (!isCrash(air, enemy))) {
+								boom(enemy, 0);
+								boom(air, 1);
+								// cancelAnimationFrame(enemy.timer);//让碰撞到的敌军停止运动;这一步是不需要的，因为被删除了的元素在文档中就不存在了
+								cancelAnimationFrame(oInterface.shellTimer); //让碰撞到的敌军停止运动
+								document.onmousemove = null; //元素虽然看不到，但是事件还在，他只是从父元素中移除去了，但是还是存在文档中
+								//移除飞机和敌军
+								clearInterval(oInterface.enemyTimer);
+								clearInterval(oInterface.shellTimer);
+								oInterface.removeChild(enemy);
+								oInterface.removeChild(air);
+								return false;
+							}
+							air && air.parentNode && (enemy.timer = requestAnimationFrame(enemyRun)); //虽然上面和我军飞机碰撞的敌军停止了，但是其他飞机没有停止，所以需要其他的飞机停止运动
+						}
+						enemy.style.top = enemyTop + "px";
+					};
+
+				};
+				//检测碰撞
+				function isCrash(obj, enemy) {
+					//敌军的获取值
+					var eT = enemy.offsetTop,
+						eTH = enemy.offsetTop + enemy.offsetHeight,
+						eL = enemy.offsetLeft,
+						eLW = enemy.offsetWidth + enemy.offsetLeft;
+					//获取传入对象的值
+					var oT = obj.offsetTop,
+						oTH = obj.offsetTop + obj.offsetHeight,
+						oL = obj.offsetLeft,
+						oLW = obj.offsetWidth + obj.offsetLeft;
+					return eTH < oT || eLW < oL || eT > oTH || eL > oLW;
+
+				};
+				//创建爆炸后的效果
+				function boom(obj, n) {
+					var boom = document.createElement("div"),
+						boomArr = ["url(img/boom_small.png) 0 0/45px 40px no-repeat", "url(img/boom2.png) 0 0/60px 60px no-repeat"];
+					console.log(obj)
+					console.log(getComputedStyle(obj)["width"]);
+					// debugger
+					boom.style.width = getComputedStyle(obj)["width"];
+					boom.style.height = getComputedStyle(obj)["height"];
+					boom.style.position = "absolute";
+					boom.style.top = obj.offsetTop + "px";
+					boom.style.left = obj.offsetLeft + "px";
+					boom.style.background = boomArr[n];
+					oInterface.appendChild(boom);
+					setTimeout(function() {
+						boom.parentNode && oInterface.removeChild(boom);
+						if (n == 1) {
+							gameOver()
+						}
+					}, 200)
+				};
+				//游戏结束
+				function gameOver() {
+					oInterface.innerHTML = "";
+					var endBox = document.createElement("div"),
+						again = document.createElement("div");
+					endBox.className = "end-box";
+					again.className = "again";
+					endBox.innerHTML = `<h3 class="gameover"> 游戏结束</h3><p>得分：${num*10}</p>`;
+					// endBox.innerHTML=`<h3 class="gameover"> GAME OVER</h3><p>得分：${oInterface.score}</p>`;
+					again.innerHTML = "再来一次";
+					again.onclick = function() {
+						oInterface.innerHTML = "";
+						init()
+					};
+					endBox.appendChild(again);
+					oInterface.appendChild(endBox);
+				};
+				//分数盒子
+				function count() {
+					var count = document.createElement("div");
+					count.className = "count";
+					oInterface.appendChild(count);
+					// oInterface.score=0;/*自定义属性积分*/
+					count.innerHTML = num * 10; /*全局计数积分*/
+					// count.innerHTML=oInterface.score;
+					// console.log(oInterface.score)
+				};
+
+
+			};
+			/*全局尾部*/
+		})();
+	</script>
+</html>

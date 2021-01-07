@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>淘宝购物车</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				text-decoration: none;
+			}
+			#box{
+				width: 750px;
+				margin: 0 auto;
+				text-align: center;
+			}
+			#total{
+				height: 50px;
+				background: #ccc;
+			}
+			#total>div{
+				width: 200px;
+				float: right;
+				margin: 10px;
+				line-height: 30px;
+			}
+			td,th{
+				border: 1px solid #CCCCCC;
+			}
+			#submit{
+				background-color: #F3C;	
+				height: 30px;	
+				width: 100px;
+				font-size: 16px;
+				letter-spacing: normal;	
+				border: medium none;
+			}
+			img{
+				width: 80px;
+				height: 80px;
+			}
+			#count{
+				text-align: center;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="list">
+				<table border="1" cellspacing="0" cellpadding="0" width="750" id="table">
+					<tr>
+						<th><input type="checkbox" name="checkall" id="checkall" value="" />全选</th>
+						<th>商品</th>
+						<th>单价</th>
+						<th>数量</th>
+						<th>小计</th>
+						<th>操作</th>
+					</tr>
+					<tr>
+						<td><cc><input type="checkbox" name="check" id="check" class="check" value="" /></cc></td>
+						<td><p><img src="img/shouji.jpg" ></p><p>华为手机P8</p></td>
+						<td><aa>2000</aa></td>
+						<td>
+							<input type="button" name="reduce" id="reduce" class="reduce" value="-" />
+							<span><input type="text" name="count" id="count"  class="count" value="1" size="8"/></span>
+							<input type="button" name="add" id="add" class="add" value="+" />
+						</td>
+						<td class="sum"><bb>2000</bb></td>
+						<td><a href="####" id="remove" class="remove">删除</a></td>
+					</tr>
+					<tr>
+						<td><cc><input type="checkbox" name="check" id="check" class="check" value="" /></cc></td>
+						<td><p><img src="img/cfy.jpg" ></p><p>玫红色 女款 冲锋衣外套</p></td>
+						<td><aa>600</aa></td>
+						<td>
+							<input type="button" name="reduce" id="reduce" class="reduce" value="-" />
+							<span><input type="text" name="count" id="count"  class="count" value="2" size="8"/></span>
+							<input type="button" name="add" id="add" class="add" value="+" />
+						</td>
+						<td class="sum"><bb>1200</bb></td>
+						<td><a href="####" id="remove" class="remove">删除</a></td>
+					</tr>
+					<tr>
+						<td><cc><input type="checkbox" name="check" id="check" class="check" value="" checked="checked" /></cc></td>
+						<td><p><img src="img/tbx.jpg" ></p><p>款 防滑透气 徒步鞋</p></td>
+						<td><aa>300</aa></td>
+						<td>
+							<input type="button" name="reduce" id="reduce" value="-" class="reduce"/>
+							<span><input type="text" name="count" id="count"  class="count" value="3" size="8"/></span>
+							<input type="button" name="add" id="add" class="add" value="+" />
+						</td>
+						<td class="sum"><bb>900</bb></td>
+						<td><a href="####" id="remove" class="remove">删除</a></td>
+					</tr>
+				</table>
+			</div>
+			<div id="total">
+				<div id="submitdiv">
+					<input type="submit" name="submit" id="submit" value="立即结算" />
+				</div>
+				<div id="total_money">
+					合计：￥<span id="total_pricre">0.00</span>
+				</div>
+				<div id="total_list">
+					已选商品：<span id="total_count">0</span>件
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		// 合计
+		function countt () {
+			var count=0;
+			for (var i = 0; i < $('.count').length; i++) {
+				if ($('cc input').eq(i).attr('checked')=='checked') {
+					count=count+parseInt($('.count').eq(i).val());
+				} 
+			}
+			$('#total_count').text(count);
+		}
+		countt();
+		
+		function summ () {
+			var sum=0;
+			for (var i = 0; i < $('.sum>bb').length; i++) {
+				if ($('cc input').eq(i).attr('checked')=='checked') {
+					sum=sum+parseInt($('.sum>bb').eq(i).text());
+				} 
+			}
+			$('#total_pricre').text(sum);
+		}
+		summ();
+		
+		$("cc").on("input propertychange click",function(){
+			summ();
+			countt();
+		})
+		
+		// 全选
+		$('#checkall').click(function  () {
+			if ($('#checkall').is(':checked')) {
+				$('[name=check]').prop('checked',true);
+            }else{
+				$('[name=check]').prop('checked',false);
+            };
+			summ();
+			countt();
+		})
+		
+		// 减少
+		$('.reduce').click(function  () {
+			var count=parseInt($(this).siblings().children().val());
+			var sum=$(this).parent('td').siblings().children('aa').text();
+			// console.log(sum);
+			if (count>0) {
+				count--;
+			}else{
+				count=0;
+			}
+			// console.log(count);
+			$(this).siblings().children().val(count);
+			var ssum=count*sum;
+			$(this).parent('td').siblings().children('bb').text(ssum);
+			summ();
+			countt();
+		})
+		
+		// 增加
+		$('.add').click(function  () {
+			var count=parseInt($(this).siblings().children().val());
+			var sum=$(this).parent('td').siblings().children('aa').text();
+			count++;
+			// console.log(count);
+			$(this).siblings().children().val(count);
+			var ssum=count*sum;
+			$(this).parent('td').siblings().children('bb').text(ssum);
+			summ();
+			countt();
+		})
+		
+		// 删除
+		$('.remove').click(function  () {
+			$(this).parent('td').parent('tr').remove();
+			summ();
+			countt();
+		})
+		
+		// 单击更改数量数字
+		$(".count").on("input propertychange click",function(){
+			var str = $(this).val();
+			console.log(str);
+			var prices=$(this).parent('span').parent('td').siblings().children('aa').text();
+			var sssum=str*prices;
+			$(this).parent('span').parent('td').siblings().children('bb').text(sssum);
+			summ();
+			countt();
+		});
+		
+	</script>
+</html>
+

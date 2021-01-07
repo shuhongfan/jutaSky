@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>微信首页</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				text-decoration: none;
+			}
+			
+			.clear {
+				clear: both;
+			}
+			
+			#weixin {
+				width: 100%;
+			}
+			
+			#warp {
+				width: 1200px;
+				margin: 0 auto;
+			}
+			
+			#head {
+				width: 100%;
+				height: 100px;
+				background-color: black;
+			}
+			
+			#head_warp {
+				width: 1250px;
+				margin: 0 auto;
+			}
+			
+			.head_left {
+				float: left;
+			}
+			
+			.head_left img {
+				height: 70px;
+				line-height: 80px;
+				margin-top: 20px;
+				height: 50px;
+			}
+			
+			.head_right {
+				float: right;
+			}
+			
+			.head_right ul li {
+				float: left;
+				display: block;
+				width: 120px;
+				text-align: center;
+				height: 35px;
+				line-height: 35px;
+			}
+			
+			.head_right ul li a {
+				display: block;
+				font-size: 18px;
+				text-align: center;
+				line-height: 100px;
+				height: 100px;
+				line-height: 100px;
+				color: white;
+			}
+			
+			.head_right ul li a:hover {
+				background: url(image/bottom2-1.png) no-repeat left center, url(image/bottom2-2.png) no-repeat right center;
+			}
+			
+			#content {
+				height: 530px;
+				background-color: #ccc;
+			}
+			
+			#content_warp {
+				width: 1200px;
+				margin: 0 auto;
+			}
+			
+			.content_left {
+				float: left;
+				width: 600px;
+			}
+			
+			.content_left h1 {
+				margin-top: 50px;
+			}
+			
+			.content_left h3 {
+				margin-top: 20px;
+				line-height: 30px;
+				height: 30px;
+				color: #666;
+			}
+			
+			.content_left img {
+				margin-top: 20px;
+				height: 90px;
+			}
+			
+			.content_left ul {
+				margin-top: 30px;
+			}
+			
+			.content_left ul li {
+				list-style-type: disc;
+				color: #666666;
+				margin-left: 30px;
+			}
+			
+			.content_left ul li a {
+				color: green;
+				height: 25px;
+				line-height: 25px;
+				font-size: 15px;
+			}
+			
+			.content_right {
+				float: right;
+				width: 600px;
+			}
+			
+			#lunbo {
+				height: 530px;
+				position: relative;
+				overflow: hidden;
+			}
+			
+			#lunbo img {
+				position: absolute;
+				left: 50px;
+				top: 100px;
+				display: none;
+			}
+			
+			#lunbo ul {
+				position: absolute;
+				left: 260px;
+				bottom: 70px;
+			}
+			
+			#lunbo ul li {
+				width: 12px;
+				height: 12px;
+				background: #ddd;
+				float: left;
+				margin-right: 10px;
+				border-radius: 50%;
+			}
+			
+			#lubo_left a {
+				position: absolute;
+				top: 300px;
+				width: 60px;
+				height: 50px;
+				background: url(image/bottom3.png);
+			}
+			
+			#lubo_left a:hover {
+				background: url(image/bottom3.png) 0px -50px;
+			}
+			
+			#lubo_right a {
+				position: absolute;
+				top: 300px;
+				left: 500px;
+				width: 60px;
+				height: 50px;
+				background: url(image/bottom3.png) -60px 0px;
+			}
+			
+			#lubo_right a:hover {
+				background: url(image/bottom3.png) -60px -50px;
+			}
+			
+			#warp {
+				width: 1200px;
+				margin: 40px auto;
+			}
+			
+			.new_left {
+				width: 800px;
+				float: left;
+			}
+			
+			.new_right {
+				width: 400px;
+				float: right;
+			}
+			
+			.new_left dl .img1 {
+				width: 200px;
+				height: 115px;
+				background: url(image/platform.png);
+			}
+			
+			.new_left dl .img2 {
+				width: 200px;
+				height: 115px;
+				background: url(image/platform.png) -220px;
+			}
+			
+			.new_left dl .img3 {
+				width: 200px;
+				height: 115px;
+				background: url(image/platform.png) -440px;
+			}
+			
+			.new_left dl {
+				float: left;
+				width: 250px;
+			}
+			
+			.new_left dl dt {
+				font-size: 24px;
+				margin-bottom: 20px;
+			}
+			
+			.new_left dl dt dd {
+				font-size: 20px;
+				color: #666666;
+			}
+			
+			.new_left dl a {
+				display: block;
+				padding-top: 10px;
+				color: green;
+			}
+			
+			.new_right h4 {
+				font-size: 24px;
+				margin-bottom: 10px;
+			}
+			
+			.new_right ul li {
+				margin-left: 20px;
+				list-style-type: disc;
+				color: #666666;
+				line-height: 30px;
+			}
+			
+			.new_right ul li a {
+				color: green;
+			}
+			
+			.new_right ul li span {
+				float: right;
+			}
+			
+			.new_right ul a.more {
+				display: block;
+				color: green;
+				font-size: 20px;
+				margin: 10px;
+			}
+			
+			.new_right img {
+				margin-top: 20px;
+				float: left;
+				margin-right: 10px;
+			}
+			
+			.new_right h3 {
+				float: left;
+				margin-top: 20px;
+				margin-bottom: 100px;
+			}
+			
+			#footer {
+				border-top: 1px solid #CCCCCC;
+			}
+			
+			.footer_left {
+				float: left;
+			}
+			
+			.footer_left ul li {
+				float: left;
+				margin-top: 10px;
+			}
+			
+			.footer_left ul li a {
+				color: #666666;
+			}
+			
+			.footer_left h4 {
+				display: block;
+				color: #666666;
+				padding-top: 10px;
+			}
+			
+			.footer_right {
+				float: right;
+			}
+			
+			.footer_right ul li {
+				margin-top: 10px;
+				float: left;
+				color: #666666;
+			}
+			
+			.footer_right ul li a {
+				color: #666666;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="weixin">
+			<div id="head">
+				<div id="head_warp">
+					<div class="head_left">
+						<img src="image/logo.png" />
+					</div>
+					<div class="head_right">
+						<ul>
+							<li>
+								<a href="####">首页</a>
+							</li>
+							<li>
+								<a href="####">帮助与反馈</a>
+							</li>
+							<li>
+								<a href="####">公众平台</a>
+							</li>
+							<li>
+								<a href="####">开放平台</a>
+							</li>
+							<li>
+								<a href="####">微信支付</a>
+							</li>
+							<li>
+								<a href="####">微信广告</a>
+							</li>
+							<li>
+								<a href="####">企业微信</a>
+							</li>
+							<li>
+								<a href="####">表情开放平台</a>
+							</li>
+							<li>
+								<a href="####">微信网页版</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+			<div id="content">
+				<div id="content_warp">
+					<div class="content_left">
+						<h1>微信，是一个生活方式</h1>
+						<h3>超过十亿人使用的手机应用</h3>
+						<h3>支持发送语音短信、视频、图片和文字</h3>
+						<h3>可以群聊，仅耗少量流量，适合大部分智能手机</h3>
+						<img src="image/bottom.png" />
+						<ul>
+							<li>
+								<a href="####">忘记了微信帐号或密码？</a>
+							</li>
+							<li>
+								<a href="####">自助解除登录或功能限制</a>
+							</li>
+							<li>
+								<a href="####">冻结或解冻微信帐号</a>
+							</li>
+
+						</ul>
+					</div>
+					<div class="content_right" id="lunbo">
+						<img src="image/pic1.png" style="display: block;" />
+						<img src="image/pic2.png" />
+						<img src="image/pic3.png" />
+						<ul>
+							<li style="background: green;"></li>
+							<li></li>
+							<li></li>
+						</ul>
+						<div id="lubo_left">
+							<a href="####"></a>
+						</div>
+						<div id="lubo_right">
+							<a href="####"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="warp">
+
+				<div id="news">
+					<div class="new_left">
+						<dl>
+							<div class="img1"></div>
+							<dt>微信网页版</dt>
+							<dd>扫一扫二维码<br/>就能在浏览器上使用微信</dd>
+							<a href="####">了解更多</a>
+						</dl>
+						<dl>
+							<div class="img2"></div>
+							<dt>微信 Mac 版</dt>
+							<dd>极致简洁，迅捷沟通</dd>
+							<a href="####">了解更多</a>
+						</dl>
+						<dl>
+							<div class="img3"></div>
+							<dt>微信 Windows 版</dt>
+							<dd>让沟通更方便</dd>
+							<a href="####">了解更多</a>
+						</dl>
+					</div>
+					<div class="new_right">
+						<h4>最新消息</h4>
+						<ul>
+							<li>
+								<a href="">微信 2.6.8 for Windows 正式版发布(New)</a><span>05-28</span></li>
+							<li>
+								<a href="">微信 7.0.4 for iOS 正式版发布(New)</a><span>05-05</span></li>
+							<li>
+								<a href="">微信 7.0.4 for Android 正式版发布(New)</a><span>04-16</span></li>
+							<li>
+								<a href="">关于部分 iOS 9 用户无法更新微信(New)</a><span>01-28</span></li>
+							<li>
+								<a href="">微信外部链接内容管理规范</a><span>02-11</span></li>
+							<li>
+								<a href="">微信 2.3.6 for Mac 正式版发布</a><span>01-04</span></li>
+							<li>
+								<a href="">微信网页版 2.1 版本发布</a><span>01-17</span></li>
+							<li>
+								<a href="">微信表情开放平台上线</a><span>07-29</span></li>
+							<li>
+								<a href="">官方辟谣公众号开通</a><span>10-28</span></li>
+							<a href="####" class="more">查看更多</a>
+						</ul>
+						<img src="image/logo2.png" />
+						<h3>联系我们</h3>
+					</div>
+				</div>
+				<div id="footer" class="clear">
+					<div class="footer_left">
+						<ul>
+							<li>
+								<a href="####">关于腾讯</a>
+								<sapn>&nbsp;&nbsp;|&nbsp;&nbsp;</sapn>
+							</li>
+							<li>
+								<a href="####">服务条款</a>
+								<sapn>&nbsp;&nbsp;|&nbsp;&nbsp;</sapn>
+							</li>
+							<li>
+								<a href="####">使用规范</a>
+								<sapn>&nbsp;&nbsp;|&nbsp;&nbsp;</sapn>
+							</li>
+							<li>
+								<a href="####">客服中心</a>
+								<sapn>&nbsp;&nbsp;|&nbsp;&nbsp;</sapn>
+							</li>
+							<li>
+								<a href="####">隐私保护指引</a>
+							</li>
+						</ul>
+						<h4>© 1998 - 2019 Tencent Inc. All Rights Reserved</h4>
+					</div>
+					<div class="footer_right">
+						<ul>
+							<li>
+								<a href="####">简体中文</a>
+								<sapn>&nbsp;&nbsp;|&nbsp;&nbsp;</sapn>
+							</li>
+							<li>
+								<a href="####">繁体中文</a>
+								<sapn>&nbsp;&nbsp;|&nbsp;&nbsp;</sapn>
+							</li>
+							<li>
+								<a href="####">English</a>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</body>
+	<script type="text/javascript">
+		var fk = document.getElementById("lunbo");
+		var lis = fk.getElementsByTagName('li');
+		var is = fk.getElementsByTagName('img');
+		var c = 0;
+		var lubo_left = document.getElementById("lubo_left");
+		var lubo_right = document.getElementById("lubo_right");
+
+		function autorun() {
+			c++;
+			if(c == 3) {
+				c = 0;
+			}
+			for(var i = 0; i < 3; i++) {
+				is[i].style.display = 'none';
+				lis[i].style.background = '#ddd';
+			}
+
+			is[c].style.display = 'block';
+
+			lis[c].style.background = 'green';
+		}
+
+		var timer = setInterval(autorun, 1000);
+
+		for(var i = 0; i < lis.length; i++) {
+
+			lis[i].xuhao = i;
+
+			lis[i].onmouseover = function() {
+
+				clearInterval(timer);
+
+				c = this.xuhao;
+
+				for(var i = 0; i < 3; i++) {
+					is[i].style.display = 'none';
+					lis[i].style.background = '#ddd';
+				}
+
+				is[c].style.display = 'block';
+
+				lis[c].style.background = 'green';
+			}
+
+			lis[i].onmouseout = function() {
+
+				timer = setInterval(autorun, 1000);
+			}
+		}
+		lubo_left.onmouseover = function() {
+			clearInterval(timer);
+			lubo_left.onclick = function() {
+				c--;
+				if(c == -1) {
+					c = 2;
+				}
+				for(var i = 0; i < 3; i++) {
+					is[i].style.display = 'none';
+					lis[i].style.background = '#ddd';
+				}
+
+				is[c].style.display = 'block';
+
+				lis[c].style.background = 'green';
+			}
+		}
+		lubo_right.onmouseover = function() {
+			clearInterval(timer);
+			lubo_right.onclick = function() {
+				autorun();
+			}
+		}
+		lubo_left.onmouseout = function() {
+			timer = setInterval(autorun, 1000);
+		}
+		lubo_right.onmouseout = function() {
+			timer = setInterval(autorun, 1000);
+		}
+	</script>
+
+</html>

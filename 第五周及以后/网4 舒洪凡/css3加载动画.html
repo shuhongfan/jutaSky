@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>CSS3加载动画</title>
+		<style type="text/css">
+			h1 {
+				margin-top: 50px;
+			}
+
+			/* css1 */
+			#css1 {
+				position: relative;
+				/* top: 50px; */
+			}
+
+			#css1 span {
+				display: block;
+				bottom: 0px;
+				width: 9px;
+				height: 5px;
+				background: red;
+				position: absolute;
+				animation: css1 1.5s infinite ease-in-out;
+			}
+
+			#css1 span:nth-child(2) {
+				left: 11px;
+				animation-delay: .2s;
+			}
+
+			#css1 span:nth-child(3) {
+				left: 22px;
+				animation-delay: .4s;
+			}
+
+			#css1 span:nth-child(4) {
+				left: 33px;
+				animation-delay: .6s;
+			}
+
+			#css1 span:nth-child(5) {
+				left: 44px;
+				animation-delay: .8s;
+			}
+
+			@keyframes css1 {
+				0% {
+					height: 5px;
+					transform: translateY(0px);
+					background: yellow;
+				}
+
+				25% {
+					height: 30px;
+					transform: translateY(15px);
+					background: red;
+				}
+
+				50% {
+					height: 5px;
+					transform: translateY(0px);
+					background: green;
+				}
+
+				100% {
+					height: 5px;
+					transform: translateY(0px);
+					background: purple;
+				}
+			}
+
+			/* #css2 */
+			#css2 {
+				position: relative;
+				/* top: 100px; */
+			}
+
+			#css2 span {
+				position: absolute;
+				width: 20px;
+				height: 20px;
+				background: green;
+				opacity: 0.5;
+				border-radius: 20px;
+				animation: css2 1s infinite ease-in-out;
+			}
+
+			#css2 span:nth-child(2) {
+				left: 20px;
+				animation-delay: .1s;
+			}
+
+			#css2 span:nth-child(3) {
+				left: 40px;
+				animation-delay: .2s;
+			}
+
+			#css2 span:nth-child(4) {
+				left: 60px;
+				animation-delay: .3s;
+			}
+
+			#css2 span:nth-child(5) {
+				left: 80px;
+				animation-delay: .4s;
+			}
+			#css2 span:nth-child(6) {
+				left: 100px;
+				animation-delay: .5s;
+			}
+			@keyframes css2 {
+				0% {
+					opacity: 0.3;
+					transform: translateY(0px);
+					box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
+				}
+
+				50% {
+					opacity: 1;
+					transform: translateY(-10px);
+					background: red;
+					box-shadow: 0px 20px 3px rgba(0, 0, 0, 0.05);
+				}
+
+				100% {
+					opacity: 0.3;
+					transform: translateY(0px);
+					background: brown;
+					box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
+				}
+			}
+
+			/* css3 */
+			#css3 {
+				position: relative;
+				left: 30px;
+				width: 30px;
+				height: 30px;
+				background: red;
+				border-radius: 50px;
+				animation: css3 1.5s infinite linear;
+			}
+
+			#css3:after {
+				position: absolute;
+				width: 50px;
+				height: 50px;
+				border-top: 10px solid #9b59b6;
+				border-bottom: 10px solid #9b59b6;
+				border-left: 10px solid transparent;
+				border-right: 10px solid transparent;
+				border-radius: 50px;
+				content: '';
+				top: -20px;
+				left: -20px;
+				animation: css3 1.5s infinite linear;
+			}
+
+			@keyframes css3 {
+				0% {
+					transform: rotate(0deg);
+				}
+
+				50% {
+					transform: rotate(180deg);
+					background: yellow;
+				}
+
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+
+			@keyframes css3_after {
+				0% {
+					border-top: 10px solid #9b59b6;
+					border-bottom: 10px solid #9b59b6;
+				}
+
+				50% {
+					border-top: 10px solid #3498db;
+					border-bottom: 10px solid #3498db;
+				}
+
+				100% {
+					border-top: 10px solid #9b59b6;
+					border-bottom: 10px solid #9b59b6;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<h1>1</h1>
+		<div id="css1">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<h1>2</h1>
+		<div id="css2">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<h1>3</h1>
+		<div id="css3"></div>
+	</body>
+</html>

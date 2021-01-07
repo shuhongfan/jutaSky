@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>模拟键盘</title>
+		<script src="jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+
+			body {
+				background: #eee;
+			}
+
+			#login_area {
+				margin: 0 auto;
+				width: 430px;
+				height: 450px;
+				margin-top: 50px;
+			}
+
+			#login_area .common {
+				position: relative;
+				font-family: 微软雅黑;
+			}
+
+			#login_area .input {
+				top: 100px;
+				height: 35px;
+				width: 70%;
+				padding: 5px 5px 5px 10px;
+				margin: 0 12%;
+				font-size: 14px;
+				border: 1px solid #d2d2d2;
+				outline: none;
+			}
+
+			#login_area .input_on {
+				border-color: #00BBFF;
+			}
+
+			#login_area .psw-height {
+				top: 110px;
+			}
+
+			#login_area #button {
+				position: relative;
+				top: 170px;
+				left: 60px;
+				background: #3090e7;
+				border: none;
+				width: 300px;
+				height: 50px;
+				color: #fff;
+				font-size: 1em;
+			}
+
+			#login_area .title {
+				font-family: 微软雅黑;
+				color: #3090e7;
+				position: relative;
+				top: 70px;
+				font-size: 1.4em;
+				width: 100%;
+				text-align: center;
+			}
+
+			#login_area .title span {
+				border-bottom: 1px solid #3090e7;
+				width: 50px;
+				height: 0;
+				display: inline-block;
+				margin: 0 10px 5px;
+			}
+
+			#jianpan {
+				position: absolute;
+				background: #ffffff;
+				border-radius: 5px;
+				bottom: 50px;
+				right: 50px;
+				z-index: 9999;
+				width: 45%;
+				height: 30%;
+				display: none;
+				overflow: hidden;
+				border: 1px solid rgba(0, 0, 0, 0.5);
+			}
+
+			#jianpan .title {
+				width: 100%;
+				height: 20%;
+				border-bottom: 1px solid #dcdddd;
+				padding: 0;
+				cursor: move;
+				font-size: 1em;
+			}
+
+			#jianpan .jianpan_hide {
+				width: 40px;
+				float: right;
+			}
+
+			#xfjp {
+				width: 100%;
+				height: 80%;
+			}
+
+			#shift {
+				font-size: 0.8em;
+			}
+
+			.jianpan {
+				color: #dcdddd;
+			}
+
+			.jianpan td {
+				color: #333333;
+				width: 10%;
+				text-align: center;
+				font-size: 1em;
+				border-bottom: 1px solid #dcdddd;
+				border-left: 1px solid #dcdddd;
+			}
+
+			.jianpan tr td:first-child {
+				border-left: none;
+			}
+
+			.jianpan tr:last-child td {
+				border-bottom: none;
+			}
+
+			.jianpan td:active {
+				box-shadow: 0px 0px 10px #AAAAAA inset;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="login_area">
+			<div class="title">
+				<span>登录</span>
+			</div>
+			<div class="content">
+				<input type="text" class="common input" name="name" id="name" value="" placeholder="请输入账号!!!" onfocus="jianpan(this.id)" />
+				<input type="text" class="common input psw-height" name="pwd" id="pwd" value="" placeholder="请输入密码!!!" onfocus="jianpan(this.id)" />
+			</div>
+			<button type="button" id="button">登录</button>
+		</div>
+		<div id="jianpan">
+			<div class="title" style="text-align:center;">
+				<span id="jptitle">虚拟键盘</span>
+				<span class="jianpan_hide" onClick="xfjianpan(false)">×</span>
+			</div>
+			<table id="xfjp" class="jianpan" cellspacing="0" cellpadding="0">
+				<tr>
+					<td>1</td>
+					<td>2</td>
+					<td>3</td>
+					<td>4</td>
+					<td>5</td>
+					<td>6</td>
+					<td>7</td>
+					<td>8</td>
+					<td>9</td>
+					<td>0</td>
+				</tr>
+				<tr>
+					<td>q</td>
+					<td>w</td>
+					<td>e</td>
+					<td>r</td>
+					<td>t</td>
+					<td>y</td>
+					<td>u</td>
+					<td>i</td>
+					<td>o</td>
+					<td>p</td>
+				</tr>
+				<tr>
+					<td>a</td>
+					<td>s</td>
+					<td>d</td>
+					<td>f</td>
+					<td>g</td>
+					<td>h</td>
+					<td>j</td>
+					<td>k</td>
+					<td>l</td>
+					<td>空格</td>
+				</tr>
+				<tr>
+					<td id="shift">shift</td>
+					<td>z</td>
+					<td>x</td>
+					<td>c</td>
+					<td>v</td>
+					<td>b</td>
+					<td>n</td>
+					<td>m</td>
+					<td colspan="2">清空</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+	<script type="text/javascript">
+		// 键盘jq
+
+		function jianpan(id) {
+			// 当id为input 的ID 如果ID==false ,键盘隐藏
+
+			var jpnub = $('#xfjp td').length;
+
+			// 键盘可以移动
+			move("jianpan");
+
+			$('#xfjp td').unbind("click");
+			if (id != false) {
+				$("#jianpan").show();
+				// 获取input框当前的val值
+				var xfjp_text = $("#" + id).val();
+				$('.input_on').removeClass("input_on");
+
+				// 设置Input框选中时的样式
+				$("#" + id).addClass("input_on");
+
+				// 键盘标题,自动获取input 的placeholder
+				$('#jptitle').html($('#' + id).attr("placeholder"));
+				
+				// 键盘按键单击事件
+				$("#xfjp td").click(function() {
+					//获取点击按键的内容
+					var click = $(this).html(); 
+
+					//特殊按键在这添加事件
+					//判断点击的按键是否有特殊事件，如果没有则按键内容加在input文本后面
+					
+					// 单击清空
+					if (click == "清空") {
+						xfjp_text = "";
+						$("#" + id).val(xfjp_text);
+						
+					// 单击shift 大小写切换
+					} else if (click == "shift") {
+						for (i = 0; i < jpnub; i++) {
+							$("#xfjp td:eq(" + i + ")").html($("#xfjp td:eq(" + i + ")").html().toUpperCase());
+						}
+					} else if (click == "SHIFT") {
+						for (i = 0; i < jpnub; i++) {
+							$("#xfjp td:eq(" + i + ")").html($("#xfjp td:eq(" + i + ")").html().toLowerCase());
+						}
+					
+					// 单击空格
+					} else if (click == "空格") {
+						xfjp_text = xfjp_text + " ";
+						$("#" + id).val(xfjp_text);
+						
+					// 把按键内容加在input文本后面
+					} else {
+						xfjp_text = xfjp_text + click;
+						$("#" + id).val(xfjp_text);
+					}
+					// 获得焦点,变色
+					$("#" + id).focus();
+				})
+			} else {
+				//移除选中input的选中样式
+				$(".input_on").removeClass("input_on"); 
+				// 键盘隐藏
+				$("#jianpan").hide();
+			}
+		}
+
+		//鼠标按住拖动div
+		function unmove(obj) {
+			$("#" + obj + " .title").unbind("mousedown");
+		}
+		
+		// 鼠标单击移动函数
+		function move(obj) {
+			var OffsetX = 0;
+			var OffsetY = 0;
+			var moveKg = false;
+			var csZ = 0;
+			
+			// 获取id
+			function d(id) {
+				return document.getElementById(id);
+			}
+			
+			// 绑定鼠标按下按键
+			$("#" + obj + " .title").bind("mousedown", function() {
+				// div内鼠标左边值
+				OffsetX = event.pageX - d(obj).offsetLeft;
+				console.log("1 OffsetX:"+OffsetX);
+				// div内鼠标上面值
+				OffsetY = event.pageY - d(obj).offsetTop;
+				console.log("2 OffsetY:"+OffsetY);
+				// 改变层叠顺序
+				csZ = $("#" + obj).css("z-index");
+				$("#" + obj).css("z-index", "9999");
+				// 正在移动
+				moveKg = true;
+				jpyd();
+			})
+
+			// 鼠标移动函数
+			function jpyd() {
+				// 绑定鼠标移动事件
+				$(document).bind("mousemove", function() {
+					// 获取window.event
+					var e = e || window.event;
+					// 获取鼠标距离左边缘距离
+					var mouswX = e.pageX;
+					console.log("3 mouswX:"+mouswX);
+					// 获取鼠标距离上边缘距离
+					var mouswY = e.pageY;
+					console.log("4 mouswY:"+mouswY);
+					// 计算移动坐标
+					var moveX = mouswX - OffsetX;
+					console.log("5 moveX:"+moveX);
+					var moveY = mouswY - OffsetY;
+					console.log("6 moveY:"+moveY);
+					// 计算最大left值
+					var maxX = $(window).width() - d(obj).offsetWidth;
+					console.log("7 maxX:"+maxX);
+					// 计算最大top值
+					var maxY = $(window).height() - d(obj).offsetHeight;
+					console.log("8 maxY:"+maxY);
+					moveX = Math.min(maxX, Math.max(0, moveX));
+					moveY = Math.min(maxY, Math.max(0, moveY));
+					// 给虚拟键盘赋值
+					$("#" + obj).css({
+						"left": moveX,
+						"top": moveY
+					});
+				})
+				// 鼠标松开
+				$(document).bind("mouseup", function() {
+					// 不移动
+					moveKg = false;
+					$("#" + obj).css("z-index", csZ);
+					// 取消绑定元素
+					$(document).unbind("mousemove mouseup");
+				})
+			}
+		}
+		
+		$(document).keypress(function(e) {  
+		   if (e.ctrlKey && e.which == 13)
+		   $("form").submit();  
+		}) 
+		
+
+	</script>
+</html>

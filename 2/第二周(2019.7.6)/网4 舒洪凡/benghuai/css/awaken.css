@@ -1,0 +1,448 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	text-decoration: none;
+}
+#benghuai{
+	width: 100%;
+	background: black;
+}
+#benghuai_warp{
+	width: 1500px;
+	margin: 0 auto;
+}
+#header{
+	height: 60px;
+	display: none;
+}
+.head_logo{
+	float: left;
+	margin-top: 10px;
+}
+.head_bgm{
+	float: right;
+	background: url(../img/bgm.png) no-repeat 0px -25px;
+	width: 40px;
+	height: 20px;
+	line-height: 20px;
+	margin-top: 20px;
+}
+.head_bgm_click{
+	background: url(../img/bgm.png) no-repeat 0px 0px;
+}
+#content{
+	width: 100%;
+	height: 960px;
+	overflow: hidden;
+	position: relative;
+}
+#content .content_bg{
+	height: 960px;
+	width: 2000px;
+	position: absolute;
+	background: url(../img/ROLE_background/bg.jpg) no-repeat;
+}
+#content .content_logo{
+	position: absolute;
+	top: 600px;
+	left: 100px;
+	display: none;
+}
+#content>ul{
+	position: absolute;
+	top: 200px;
+	right: 200px;
+}
+#content>ul>li{
+	display: none;
+}
+#content>ul>li>a{
+	display: block;
+	color: black;
+	width: 545px;
+	text-align: center;
+	height: 42px;
+	line-height: 42px;
+	font-size: 35px;
+	background: white;
+	opacity: 0.6;
+	margin: 20px;
+}
+#content>ul>li>a.lock{
+	opacity: 0.4;
+}
+#content>ul>li>a.lock img{
+	margin-top: 5px;
+}
+#nav{
+	width: 1200px;
+	margin: 0 auto;
+	height: 100px;
+}
+#nav>ul>li{
+	display: block;
+	color: black;
+	width: 28%;
+	text-align: center;
+	height: 60px;
+	line-height:60px;
+	font-size: 35px;
+	background: white;
+	opacity: 0.6;
+	margin: 20px;
+	float: left;
+	display: none;
+}
+#nav>ul>li>a{
+	color: #CCCCCC;
+	border-bottom: 1px solid #CCCCCC;
+}
+#nav>ul>li>a:hover{
+	color: black;
+	border-bottom: 1px solid black;
+}
+#footer{
+	padding-top: 50px;
+	width: 1200px;
+	margin: 0 auto;
+	height:300px;
+	color: white;
+}
+.nav_hr{
+	 background: linear-gradient(to right,#666,black, #666);
+	 width: 100%;
+	 height: 40px;
+}
+.footer_left{
+	float: left;
+	width: 300px;
+}
+.footer_right{
+	width: 950px;
+	float: right;
+	margin-top: -100px;
+}
+.footer_right a{
+	color: white;
+}
+
+
+/* character */
+#header .haed_nav{
+	margin-left: 10px;
+	float: left;
+	width: 1100px;
+	height: 60px;
+	overflow: hidden;
+}
+#header .haed_nav>ul{
+	margin-top: 15px;
+}
+#header .haed_nav>ul>li{
+	float: left;
+}
+#header .haed_nav>ul>li>a{
+	color: black;
+	display: block;
+	width: 190px;
+	font-size: 20px;
+	background: white;
+	opacity: 0.4;
+	float: left;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	margin-right: 20px;
+}
+#header .haed_nav>ul>li>a>img{
+	margin-top: 5px;
+	height: 20px;
+}
+.content_bg1{
+	height: 960px;
+	width: 1920px;
+	position: absolute;
+	background: url(../img/ROLE_background/bg_character_article.png) no-repeat;
+}
+.content_ul{
+	margin-top: 200px;
+	width: 100%;
+	height: 400px;
+	background: black;
+	opacity: 0.4;
+}
+.content_ul>ul{
+	width: 600px;
+	margin: 0 auto;
+	padding-top: 30px;
+}
+.content_ul>ul>li>a{
+	display: block;
+	color: black;
+	width: 545px;
+	text-align: center;
+	height: 60px;
+	line-height: 60px;
+	font-size: 35px;
+	background: white;
+	opacity: 1;
+	margin: 20px;
+}
+#header .haed_nav .current{
+	transform:scale(1.2);
+	background-color: white;
+	opacity: 0.99;
+}
+
+
+/*role*/
+#content .content_role{
+	position: absolute;
+	width: 1300px;
+	height: 900px;
+	display: none;
+}
+#content .content_role ul{
+	position: absolute;
+	top: 300px;
+	left: 50px;
+	width: 110px;
+	height: 160px;
+	float: left;
+	display: none;
+}
+#content .content_role ul li a{
+	color: white;
+	text-align: center;
+	line-height: 40px;
+	height: 40px;
+	width: 110px;
+	float: right;
+}
+#content .content_role ul li a span{
+	width: 10px;
+	height: 10px;
+	border-radius: 10px;
+	display: block;
+	background: white;
+	float: left;
+	margin-top: 15px;
+}
+.content_news{
+	float: left;
+	position: absolute;
+	top: 310px;
+	left: 150px;
+	display: none;
+}
+.content_news img{
+	margin-top: -65px;
+	margin-left: 30px;
+}
+.content_news hr{
+	margin-top: 60px;
+	width: 350px;
+}
+.content_news_img{
+	position: absolute;
+	top: -2px;
+	left: 35px;
+	width: 145px;
+	height: 130px;
+	background: url(../img/AWAKEN/head/1.png) no-repeat;
+	cursor: pointer;
+}
+.content_role_new{
+	position: absolute;
+	top: 50px;
+	left: 400px;
+	width: 800px;
+	display: none;
+}
+.awaken_new_img1{
+	position: absolute;
+	background: url(../img/AWAKEN/character/1.png) no-repeat;
+	width:414px;
+	height: 414px;
+	top: 160px;
+	left: 50px;
+}
+.awaken_new_img2{
+	position: absolute;
+	background: url(../img/AWAKEN/introduce/1.png) no-repeat;
+	width: 293px;
+	height: 331px;
+	float: left;
+	margin-top: 20px;
+	top:400px;
+	left: 50px;
+}
+.awaken_new_img3{
+	position: absolute;
+	background: url(../img/AWAKEN/date/1.png) no-repeat;
+	width: 293px;
+	height: 125px;
+	margin-top: 20px;
+	top:20px;
+	left: 50px;
+}
+.new_img{
+	position: absolute;
+	background: url(../img/AWAKEN/background/1.png) no-repeat;
+	width: 1500px;
+	height: 1100px;
+}
+
+.content_click{
+	position: absolute;
+	left: 320px;
+	top: 0px;
+	width: 900px;
+	height: 800px;
+	background: black;
+	display: none;
+}
+.content_click>img{
+	position: absolute;
+	top: 240px;
+	left: 30px;
+}
+.content_click_logo{
+	width: 700px;
+	height: 900px;
+	margin-left: 100px;
+}
+.content_click_logo1 a{
+	float: left;
+	display: block;
+	width: 150px;
+	height: 130px;
+}
+.content_click_logo1 .img1{
+	margin-top: 20px;
+	opacity: 0.1;
+}
+.content_click_logo1 .img2{
+	margin-top: -190px;
+	padding-bottom: 20px;
+}
+
+/* awaken2 */
+#aw1{
+	background: url(../img/AWAKEN/head/2.png) no-repeat;
+}
+#aw2{
+	background: url(../img/AWAKEN/character/2.png) no-repeat;
+}
+#aw3{
+	background: url(../img/AWAKEN/introduce/2.png) no-repeat;
+}
+#aw4{
+	background: url(../img/AWAKEN/date/2.png) no-repeat;
+}
+#aw5{
+	background: url(../img/AWAKEN/background/2.png) no-repeat;
+}
+
+/* awaken3 */
+#aw6{
+	background: url(../img/AWAKEN/head/3.png) no-repeat;
+}
+#aw7{
+	background: url(../img/AWAKEN/character/3.png) no-repeat;
+}
+#aw8{
+	background: url(../img/AWAKEN/introduce/3.png) no-repeat;
+}
+#aw9{
+	background: url(../img/AWAKEN/date/3.png) no-repeat;
+}
+#aw10{
+	background: url(../img/AWAKEN/background/3.png) no-repeat;
+}
+
+/* awaken4 */
+#aw11{
+	background: url(../img/AWAKEN/head/4.png) no-repeat;
+}
+#aw12{
+	background: url(../img/AWAKEN/character/4.png) no-repeat;
+}
+#aw13{
+	background: url(../img/AWAKEN/introduce/4.png) no-repeat;
+}
+#aw14{
+	background: url(../img/AWAKEN/date/4.png) no-repeat;
+}
+#aw15{
+	background: url(../img/AWAKEN/background/4.png) no-repeat;
+}
+
+/* awaken5 */
+#aw16{
+	background: url(../img/AWAKEN/head/5.png) no-repeat;
+}
+#aw17{
+	background: url(../img/AWAKEN/character/5.png) no-repeat;
+}
+#aw18{
+	background: url(../img/AWAKEN/introduce/5.png) no-repeat;
+}
+#aw19{
+	background: url(../img/AWAKEN/date/5.png) no-repeat;
+}
+#aw20{
+	background: url(../img/AWAKEN/background/5.png) no-repeat;
+}
+
+/* awaken6 */
+#aw21{
+	background: url(../img/AWAKEN/head/6.png) no-repeat;
+}
+#aw22{
+	background: url(../img/AWAKEN/character/6.png) no-repeat;
+}
+#aw23{
+	background: url(../img/AWAKEN/introduce/6.png) no-repeat;
+}
+#aw24{
+	background: url(../img/AWAKEN/date/6.png) no-repeat;
+}
+#aw25{
+	background: url(../img/AWAKEN/background/6.png) no-repeat;
+}
+
+/* awaken7 */
+#aw26{
+	background: url(../img/AWAKEN/head/7.png) no-repeat;
+}
+#aw27{
+	background: url(../img/AWAKEN/character/7.png) no-repeat;
+}
+#aw28{
+	background: url(../img/AWAKEN/introduce/7.png) no-repeat;
+}
+#aw29{
+	background: url(../img/AWAKEN/date/7.png) no-repeat;
+}
+#aw30{
+	background: url(../img/AWAKEN/background/7.png) no-repeat;
+}
+
+/* awaken8 */
+#aw31{
+	background: url(../img/AWAKEN/head/8.png) no-repeat;
+}
+#aw32{
+	background: url(../img/AWAKEN/character/8.png) no-repeat;
+}
+#aw33{
+	background: url(../img/AWAKEN/introduce/8.png) no-repeat;
+}
+#aw34{
+	background: url(../img/AWAKEN/date/8.png) no-repeat;
+}
+#aw35{
+	background: url(../img/AWAKEN/background/8.png) no-repeat;
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>文字墙</title>
+		<style type="text/css">
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+
+			body {
+				position: relative;
+				top: 0px;
+				left: 0px;
+				bottom: 0px;
+				right: 0px;
+				background: yellowgreen;
+			}
+
+			.item {
+				width: 200px;
+				height: 200px;
+				line-height: 30px;
+				background: yellow;
+				position: absolute;
+				user-select:none;
+
+			}
+
+
+			#warp a {
+				text-decoration: none;
+				color: red;
+				position: absolute;
+				right: 40px;
+				top: 30px;
+				coler: red;
+				font-size: 14px;
+				display: block;
+			}
+
+			#input {
+				display: block;
+				height: 30px;
+				padding: 0 1em;
+				line-height: 30px;
+				width: 300px;
+				margin: 85px auto;
+				font-size: 20px;
+				position: absolute;
+				top: 800px;
+				left: 50%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<input type="text" name="input" id="input" placeholder="请输入内容！！！回车键发布！！！" value="" />
+
+		<div id="warp">
+			<div class="item">
+				text111<a href="#####">X</a>
+			</div>
+			<div class="item">
+				text222<a href="#####">X</a>
+			</div>
+			<div class="item">
+				text333<a href="#####">X</a>
+			</div>
+			<div class="item">
+				text444<a href="#####">X</a>
+			</div>
+			<div class="item">
+				text555<a href="#####">X</a>
+			</div>
+
+		</div>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var text = 1;
+
+		function create() {
+			$('<div class="item">' + text + '<a href="#####">X</a></div>').appendTo(warp);
+		}
+		$(document).keyup(function(event) {
+			if (event.keyCode == 13) {
+				text = $('input').val();
+				create();
+				
+			}
+		});
+		
+		
+		$(document).on("click","#warp a",function  () {
+			$(this).parent('div').remove();
+		})
+
+		$('.item').eq(0).css({'left':'100px','top':'100px'});
+		$('.item').eq(1).css({'left':'200px','top':'200px'});
+		$('.item').eq(2).css({'left':'300px','top':'300px'});
+		$('.item').eq(3).css({'left':'400px','top':'400px'});
+		$('.item').eq(4).css({'left':'500px','top':'500px'});
+		
+
+		
+		
+		$(document).on("mousedown","#warp .item",function  (e) {
+				var index=$(this).index();
+					$(this).css('z-index',999);
+					$(this).siblings().css('z-index',111);
+			        var isMove = true;
+			        var div_x = e.pageX - $('#warp .item').eq(index).offset().left;
+			        var div_y = e.pageY - $('#warp .item').eq(index).offset().top;
+			        $(document).mousemove(function (e) {
+			            if (isMove) {
+			                var obj = $('#warp .item').eq(index);
+			                obj.css({"left":e.pageX - div_x, "top":e.pageY - div_y});
+			            }
+			        }).mouseup(
+			            function () {
+							isMove = false;
+			        });
+			});
+	</script>
+</html>

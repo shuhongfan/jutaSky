@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>图片放大镜效果</title>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			#left{
+				width: 400px;
+				height: 400px;
+				border: 1px solid black;
+				margin: 20px;
+				background: url(img/400.jpg);
+				position: relative;
+				float: left;
+			}
+			#box{
+				width: 220px;
+				height: 200px;
+				background: white;
+				opacity: 0.4;
+				position: absolute;
+				left: 0px;
+				top: 0px;
+				display: none;
+			}
+			#right{
+				width: 440px;
+				height: 400px;
+				border: 1px solid black;
+				position: relative;
+				top: 0;
+				left: 0;
+				float: left;
+				margin: 30px;
+				overflow: hidden;
+				display: none;
+			}
+			#pic{
+				position: absolute;
+				left: 0px;
+				top: 0px;
+			}
+			#cover{
+				width: 400px;
+				height: 400px;
+				background: blue;
+				position: absolute;
+				left: 0px;
+				top: 0px;
+				opacity: 0;
+				cursor: crosshair;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="left">
+			<div id="box">
+				
+			</div>
+			<div id="cover">
+				
+			</div>
+		</div>
+		<div id="right">
+			<img src="img/800.jpg" id="pic">
+		</div>
+	</body>
+	<script type="text/javascript">
+		// 给左侧加鼠标移动事件
+		$('#cover').mousemove(function  (e) {
+			// 获得鼠标位置
+			var mouse_left=e.pageX;
+			var mouse_top=e.pageY;
+			// 获得色块位置
+			var box_left=mouse_left-110;
+			var box_top=mouse_top-100;
+			if (box_left<0) {
+				box_left=0;
+			}
+			if (box_top<0) {
+				box_top=0;
+			}
+			if (box_left>180) {
+				box_left=180;
+			}
+			if (box_top>200) {
+				box_top=200;
+			}
+			// 设置色块的位置
+			$('#box').css('left',box_left);
+			$('#box').css('top',box_top);
+			// $('#box').style.left=box_left;
+			// $('#box').style.top=box_top;
+			// 计算右侧大图的位置
+			var pic_left=box_left*-2;
+			var pic_top=box_top*-2;
+			// 设置右侧大图的位置
+			$('#pic').css('left',pic_left);
+			$('#pic').css('top',pic_top);
+			// $('#pic').style.left=pic_left;
+			// $('#pic').style.top=pic_top;
+			// 鼠标移入事件
+			$('#cover').mouseover(function  () {
+				$('#box').show();
+				$('#right').show();
+			})
+			$('#cover').mouseout(function  () {
+				$('#box').hide();
+				$('#right').hide();
+			})
+		})
+	</script>
+</html>

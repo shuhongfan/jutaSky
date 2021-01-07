@@ -1,0 +1,3052 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>淘宝首页</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				font-size: 12px
+			}
+
+			ul li {
+				list-style: none
+			}
+
+			a {
+				text-decoration: none;
+				color: #777372
+			}
+
+			.fl {
+				float: left
+			}
+
+			.fr {
+				float: right
+			}
+
+			.on {
+				color: red
+			}
+
+			.cl {
+				clear: both
+			}
+
+			.pr {
+				position: relative
+			}
+
+			.comwidth {
+				width: 1200px;
+				margin: 0 auto
+			}
+
+			.com_top_nav {
+				width: 270px;
+				height: 300px;
+				border-right: 1px solid #eee;
+				float: left;
+				margin-right: 20px;
+				padding-top: 10px
+			}
+
+			.mb5 {
+				margin-bottom: 5px
+			}
+
+
+			/* main.css */
+			/*header-top*/
+			.top {
+				width: 1200px;
+				height: 35px;
+				background-color: #F5F5F5;
+				margin: 0 auto;
+				font-size: 10px;
+				text-align: center;
+				line-height: 35px
+			}
+
+			.top>.top_l li {
+				float: left;
+				margin-right: 20px
+			}
+
+			.top>.top_l>ul>li>a:hover {
+				color: red;
+				
+			}
+
+			.top>.top_r>ul>li>a:hover {
+				color: red;
+			}
+
+			.top .comdown {
+				background: url(img/icon/down.jpg) right center no-repeat;
+				padding-right: 20px;
+			}
+
+			.top .dq {
+				width: 293px;
+				height: 312px;
+				border: 1px solid #eee;
+				overflow: auto;
+				position: absolute;
+				left: 0;
+				top: 35px;
+				background-color: white;
+				display: none;
+				z-index: 1001
+			}
+			.top .dq ul li a{
+				display: block;
+				width: 293px;
+				text-align: left;
+			}
+			.top .dq ul li a:hover{
+				background: #CCCCCC;
+			}
+			.top .dq li {
+				clear: both
+			}
+
+			.top .top_r img {
+				vertical-align: middle
+			}
+
+			.top>.top_r li {
+				float: left;
+				margin-right: 20px;
+				display: block;
+			}
+
+			.top>.top_r li .fgx {
+				padding-right: 20px;
+				border-right: 1px dotted #DCDCDC;
+			}
+
+			.top .myt {
+				width: 92px;
+				height: 70px;
+				position: absolute;
+				left: 0;
+				top: 35px;
+				display: none;
+				z-index: 1001;
+				background-color: white;
+				font-size: 14px;
+				overflow: hidden
+			}
+			.top .myt ul li a{
+				display: block;
+				width: 92px;
+			}
+			.top .myt ul li a:hover{
+				background: #CCCCCC;
+			}
+			
+			.top .scj {
+				width: 92px;
+				height: 70px;
+				position: absolute;
+				left: 170px;
+				top: 35px;
+				display: none;
+				z-index: 1001;
+				background-color: white;
+				font-size: 14px;
+				overflow: hidden
+			}
+			.top .scj ul li a{
+				display: block;
+				width: 92px;
+			}
+			.top .scj ul li a:hover{
+				background: #CCCCCC;
+			}
+			
+			.top .qn {
+				width: 92px;
+				height: 280px;
+				position: absolute;
+				left: 350px;
+				top: 35px;
+				display: none;
+				z-index: 1001;
+				background-color: white;
+				font-size: 14px;
+				overflow: hidden
+			}
+			.top .qn ul li a{
+				display: block;
+				width: 92px;
+			}
+			.top .qn ul li a:hover{
+				background: #CCCCCC;
+			}
+			
+			.top .kf {
+				width: 92px;
+				height: 70px;
+				position: absolute;
+				left: 460px;
+				top: 35px;
+				display: none;
+				z-index: 1001;
+				background-color: white;
+				font-size: 14px;
+				overflow: hidden
+			}
+			.top .kf ul li a{
+				display: block;
+				width: 92px;
+			}
+			.top .kf ul li a:hover{
+				background: #CCCCCC;
+			}
+			
+			.top_nav {
+				width: 1200px;
+				height: 416px;
+				position: absolute;
+				left: -550px;
+				top: 35px;
+				background-color: white;
+				display: none;
+				z-index: 1001
+			}
+
+			.top_nav li {
+				margin-top: 20px;
+				margin-right: 25px;
+				width: 60px;
+				height: 20px;
+				float: left;
+				font-size: 14px;
+				font-family: "宋体"
+			}
+			.top_nav a {
+				color: #2F2F2F
+			}
+			.top_nav li a{
+				display: block;
+			}
+			.top_nav li a:hover{
+				background: #ADD8E6;
+			}
+			
+			/* 搜索栏 */
+			/*search*/
+			.search_text {
+				background: url(img/icon/2.jpg) right center no-repeat;
+				border-radius:30px 0px 0px 30px;
+				border: 1px solid #FF4200;
+			}
+
+			/*header-ls*/
+			.ls {
+				height: 122px;
+				font-size: 14px;
+				font-family: "宋体";
+				margin-bottom: 20px
+			}
+
+			.ls .logo {
+				padding-top: 40px
+			}
+
+			.ls .search {
+				padding-left: 85px;
+				padding-top: 42px
+			}
+
+			.ls .search li {
+				float: left;
+				margin-right: 20px
+			}
+
+			.ls .search li a {
+				font-size: 14px;
+				font-family: "宋体";
+				color: #2F2F2F
+			}
+
+			.ls .search_text {
+				width: 610px;
+				height: 45px
+			}
+
+			.ls .search_btn {
+				width: 82px;
+				height: 48px;
+				border: 1px solid #FF4200;
+				border-radius:0px 30px 30px 0px;
+				background: #FF4200;
+				margin-left: -8px;
+				color: white;
+				font-size: 14px;
+			}
+
+			/*nav_top*/
+			.nav_t {
+				height: 40px;
+				position: relative;
+				background: orange;
+				line-height: 40px;
+			}
+			.nav_t ul li a{
+				display: block;
+				font-size: 14px;
+			}
+			.nav_t ul li a:hover{
+				color: red;
+			}
+			.nav_t h3 {
+				width: 210px;
+				float: left;
+				text-align: center
+			}
+
+			.nav_t li {
+				float: left;
+				margin-left: 25px
+			}
+
+			.nav_t li a {
+				font-size: 12px;
+				font-family: "宋体";
+				color: #2F2F2F
+			}
+
+			/*nav_m*/
+			/*nav_l*/
+			.nav_l {
+				width: 985px;
+				height: 674px
+			}
+
+			/*nal_b*/
+			.search  .nal_b {
+				background: url(img/icon/tbtt.jpg) left center no-repeat;
+				width: 981px;
+				height: 143px;
+				padding-left: 220px;
+				padding-top: 10px;
+			}
+			.search  .nal_b ul li a:hover{
+				color: red;
+			}
+			.nbr {
+				width: 750px;
+				height: 85px;
+				float: left
+			}
+
+			.nbr img {
+				vertical-align: middle;
+				float: left
+			}
+
+			.nbr p {
+				float: left;
+				text-align: center;
+				line-height: 20px;
+				font-size: 13px;
+				padding-left: 15px
+			}
+
+			/*nav_show*/
+			.nav_show {
+				width: 210px;
+				height: 550px;
+				text-align: center;
+				border: 2px solid orangered;
+			}
+
+			.nav_show>ul>li {
+				float: left;
+				height: 37px;
+				margin-top: 2px;
+				line-height: 37px;
+				text-align: center;
+				/* background: url(img/icon/right.jpg) right center no-repeat; */
+				width: 210px;
+				z-index: 2
+			}
+			
+			.nav_show>ul>li:hover {
+				background-color: pink
+			}
+			.nav_show>ul>li a:hover{
+				color: red;
+			}
+			.nav_show a {
+				font-size: 12px;
+				font-family: "宋体";
+				color: #2F2F2F;
+			}
+
+			/*show_item*/
+			.show_item {
+				position: absolute;
+				left: 210px;
+				top: 0;
+				width: 780px;
+				height: 530px;
+				background-color: white;
+				z-index: 2;
+				display: none;
+				border: 2px solid orangered;
+			}
+
+			.show_item .item_l {
+				width: 450px;
+				float: left;
+				margin: 5px;
+				padding-left: 30px;
+				border-right: 1px solid red
+			}
+
+			.item dl {
+				display: block;
+				width: 450px;
+				height: 150px;
+				overflow: hidden;
+				margin-left: 30px;
+				margin-top: 20px
+			}
+
+			.item_l dt {
+				display: block;
+				height: 20px;
+				width: 450px;
+				float: left;
+				line-height: 20px;
+				margin-top: 20px
+			}
+
+			.item_l dd {
+				display: block;
+				height: 125px;
+				width: 450px;
+				margin-right: 20px;
+				float: left
+			}
+
+			.item_l dd a {
+				display: block;
+				float: left;
+				border-left: 1px solid #CCC;
+				color: #737373;
+				font-size: 9pt;
+				padding: 0 8px;
+				height: 14px;
+				line-height: 14px;
+				margin: 4px 0;
+			}
+			.item_l dd a:hover{
+				color: red;
+			}
+			.show_item .item_r {
+				width: 260px;
+				float: left;
+				margin: 5px
+			}
+
+			.item_r li {
+				float: left;
+				width: 118px;
+				height: 150px;
+				padding-bottom: 5px
+			}
+
+			/*nav_c*/
+			.nav_c {
+				width: 760px;
+				height: 560px;
+				float: left;
+				margin-left: 10px
+			}
+
+			.nav_c_l {
+				width: 580px;
+				height: 560px;
+				float: left;
+				overflow: hidden
+			}
+
+			#ncl_s {
+				position: relative;
+				width: 570px;
+				height: 307px;
+			}
+
+			#ncl_z {
+				height: 10px;
+				width: 570px;
+				display: block;
+				background-color: red
+			}
+
+			#slist {
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 570px;
+				height: 307px;
+				z-index: 1;
+				overflow: hidden
+			}
+
+			#slist img {
+				position: absolute;
+				left: 0;
+				top: 0;
+				display: none
+			}
+
+			#ncl_x {
+				position: relative;
+				width: 570px;
+				height: 300px
+			}
+
+			#slist2 {
+				width: 570px;
+				height: 180px;
+				overflow: hidden
+			}
+
+			#slist2 img {
+				display: none
+			}
+
+			#sbuttons {
+				position: absolute;
+				left: 230px;
+				top: 270px;
+				width: 100px;
+				height: 25px;
+				z-index: 1
+			}
+
+			#sbuttons span {
+				float: left;
+				margin-left: 3px;
+				width: 13px;
+				height: 15px;
+				border: 1px solid #fff;
+				border-radius: 50%;
+				background-color: #333;
+				cursor: pointer
+			}
+
+			#sbuttons span.light {
+				background-color: red
+			}
+
+			#shengs {
+				width: 570px;
+				height: 30px;
+				margin: 5px 0
+			}
+
+			#shengs .hengsye {
+				width: 28px;
+				height: 15px;
+				background-color: lightblue;
+				float: right
+			}
+
+			#shengs .hengsye p {
+				display: none;
+				width: 28px;
+				height: 5px
+			}
+
+			#shengs .heng {
+				width: 570px;
+				height: 5px
+			}
+
+			#shengs .heng span {
+				float: left;
+				width: 114px;
+				height: 5px;
+				background-color: lightblue;
+				display: block;
+			}
+
+			#shengs .heng span.light {
+				background-color: red
+			}
+
+			.snarrow {
+				display: none;
+				position: absolute;
+				top: 150px;
+				width: 25px;
+				height: 30px;
+				z-index: 2;
+				font-size: 15px;
+				font-weight: bold;
+				line-height: 30px;
+				text-align: center;
+				color: #fff;
+				background-color: RGBA(0, 0, 0, .3);
+				cursor: pointer
+			}
+
+			#sprev {
+				left: 20px
+			}
+
+			#snext {
+				right: 20px
+			}
+
+			#ncl_s:hover .snarrow {
+				display: block
+			}
+
+			.nav_r {
+				width: 215px;
+				height: 674px;
+				float: left
+			}
+
+			.xinxi {
+				width: 215px
+			}
+
+			.xinxi div {
+				text-align: center;
+				width: 215px;
+				height: 100px;
+				margin: 0 auto
+			}
+
+			.xinxi a {
+				margin-left: 5px
+			}
+
+			.xinxi img {
+				display: block
+			}
+
+			.xinxi li {
+				float: left;
+				margin-right: 30px
+			}
+
+			.jubao {
+				width: 215px;
+				background-color: pink;
+				text-align: center;
+				padding-left: 1px
+			}
+
+			.jubao a {
+				width: 215px;
+				background-color: pink;
+				text-align: center
+			}
+
+			.wrapper {
+				font-size: 12px;
+				font-family: "宋体"
+			}
+
+			.tab {
+				height: 25px;
+				width: 215px;
+				line-height: 25px;
+				margin-top: 25px;
+			}
+
+			.tab li {
+				float: left;
+				margin-left: 15px
+			}
+
+			.neirong {
+				padding-left: 15px
+			}
+
+			.neirong .main {
+				float: left;
+				display: none
+			}
+
+			.neirong .main.selected {
+				display: block
+			}
+
+			.tab li.active {
+				border-top: 1px solid red;
+				border-bottom: 0
+			}
+
+			.content .cshow {
+				width: 535px;
+				padding: 5px;
+				margin-right: 10px;
+			}
+
+			.htile {
+				height: 40px;
+				line-height: 40px;
+				background: url(img/icon/yhh.jpg) left center no-repeat;
+				padding-left: 85px;
+				margin-bottom: 10px;
+				padding-right: 40px;
+			}
+
+			.citem {
+				width: 160px;
+				height: 260px;
+				border: 1px solid red;
+				float: left;
+				margin-right: 8px;
+				margin-bottom: 5px;
+				position: relative;
+			}
+
+			.citem img {
+				width: 160px
+			}
+
+			.footer {
+				height: 70px;
+				line-height: 70px;
+				display: block;
+			}
+
+			.tpzs {
+				position: absolute;
+				z-index: 999;
+				top: 2px;
+				left: 2px;
+				width: 160px;
+				height: 40px;
+				line-height: 40px;
+				opacity: 0.5;
+				display: none;
+				text-align: left;
+				color: #fff;
+				background: #000;
+				text-align: center;
+			}
+
+
+			.cneirong a:hover .tpzs {
+				display: block;
+			}
+
+			.item {
+				width: 1200px;
+				height: 640px
+			}
+
+			#menu {
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				margin-left: 600px;
+				width: 80px;
+			}
+
+			#menu ul li a {
+				display: block;
+				margin: 5px;
+				font-size: 14px;
+				font-weight: bold;
+				color: #333;
+				width: 80px;
+				height: 50px;
+				line-height: 50px;
+				text-decoration: none;
+				text-align: center;
+			}
+
+			#menu ul li a:hover,
+			#menu ul li a.current {
+				color: #fff;
+				background-color: #0088bb;
+			}
+
+			#page {
+				margin: 0 auto;
+				padding-left: 25%
+			}
+
+			#page ul {
+				height: 100%;
+				list-style-type: none;
+			}
+
+			#page li {
+				line-height: 40px;
+				float: left;
+				margin-right: 10px
+			}
+
+			#page .page_btn {
+				border-radius: 4px;
+				border: 1px solid #e5e9ef;
+				background: #fff;
+				margin-right: 10px;
+				text-align: center;
+				width: 38px;
+				height: 38px;
+				line-height: 8px;
+				margin-top: 6px;
+				outline: 0;
+			}
+
+			#page .page_btn:hover {
+				border: 1px solid #4f90fb;
+				color: #4f90fb;
+			}
+
+			#page span.pages_span {
+				margin-right: 10px;
+				width: 38px;
+				height: 38px;
+				position: relative;
+				top: 10px;
+			}
+			.right{
+				float: right;
+			}
+			#ncl_z{
+				background: white;
+			}
+			#shengs .heng span{
+				height: 5px;
+			}
+			#slist{
+				margin: 10px;
+			}
+			#ncl_x{
+				height: 50px;
+			}
+			#slist2{
+				margin-top: -20px;
+			}
+			.citem{
+				height: 220px;
+			}
+			.mb5{
+				text-align: center;
+			}
+			.footer p{
+				padding-top: 10px;
+				height: 25px;
+				line-height: 25px;
+			}
+		</style>
+		<script src="js/jquery-1.12.4.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				// 滚动切换 滚动条
+				$(window).scroll(function() {
+					var top = $(document).scrollTop();
+					var menu = $("#menu");
+					var currentId = "";
+					var items = $("#content").find(".item");
+					items.each(function() {
+						var m = $(this);
+						var itemTop = m.offset().top;
+						if (top > itemTop - 300) {
+							currentId = "#" + m.attr("id");
+						} else {
+							return false;
+						}
+					});
+					// 单击切换
+					var currentLink = menu.find(".current");
+					if (currentId && currentLink.attr("href") != currentId) {
+						currentLink.removeClass("current");
+						menu.find("[href='" + currentId + "']").addClass("current");
+					}
+				});
+
+				// 导航栏 网站导航
+				var $top_l = $(".top_l>ul>li");
+				// 鼠标移入显示
+				$top_l.mouseover(function() {
+					$(this).children("div").show();
+				})
+				// 鼠标移出隐藏
+				$top_l.mouseout(function() {
+					$(this).children("div").hide();
+				})
+				var $top_r = $(".top_r>ul>li");
+				$top_r.mouseover(function() {
+					$(this).children("div").show();
+				})
+				$top_r.mouseout(function() {
+					$(this).children("div").hide();
+				})
+				var $nav_show = $(".nav_show>ul>li");
+				$nav_show.mouseover(function() {
+					$(this).children("div").show();
+				})
+				$nav_show.mouseout(function() {
+					$(this).children("div").hide()
+				})
+
+				// 轮播图
+				var count = 0;
+				var count2 = 0;
+				// 下一张
+				$("#snext").click(function() {
+					count++;
+					if (count == 5) {
+						count = 0
+					}
+					$("#slist img").eq(count).fadeIn().siblings().fadeOut();
+					$("#sbuttons span").eq(count).addClass("light").siblings().removeClass("light");
+				})
+				// 上一张
+				$("#sprev").click(function() {
+					count--;
+					if (count == -1) {
+						count = 4
+					}
+					$("#slist img").eq(count).fadeIn().siblings().fadeOut();
+					$("#sbuttons span").eq(count).addClass("light").siblings().removeClass("light");
+				})
+				// 小圆点单击
+				$("#sbuttons span").click(function() {
+					var idx = $(this).index();
+					count = idx;
+					$(this).addClass("light").siblings().removeClass("light");
+					$("#slist img").eq(idx).fadeIn().siblings().fadeOut();
+				})
+
+				// 轮播图2
+				$("#shengs span").click(function() {
+					var idx = $(this).index();
+					count2 = idx
+					$(this).stop().addClass("light").siblings().removeClass("light");
+					$("#slist2 img").eq(idx).stop().show().siblings().hide();
+					$("#shengs p").eq(idx).stop().show().siblings().hide();
+				})
+
+				// 轮播图上
+				function start() {
+					timer = setInterval(function() {
+						count++;
+						if (count == 5) {
+							count = 0
+						}
+						$("#slist img").eq(count).fadeIn().siblings().fadeOut();
+						$("#sbuttons span").eq(count).addClass("light").siblings().removeClass("light");
+					}, 2000)
+				}
+
+				// 轮播图下
+				function start2() {
+					timer2 = setInterval(function() {
+						count2++;
+						if (count2 == 5) {
+							count2 = 0
+						}
+						$("#slist2 img").eq(count).show().siblings().hide();
+						$("#shengs span").eq(count).addClass("light").siblings().removeClass("light");
+						$("#shengs p").eq(count).show().siblings().hide();
+					}, 2000)
+				}
+				start();
+				start2();
+
+				$("#ncl_s").mouseout(start);
+				// 鼠标移入 清除定时器
+				$("#ncl_s").mouseover(function() {
+					clearInterval(timer)
+				});
+				$("#ncl_x").mouseout(start2);
+				$("#ncl_x").mouseover(function() {
+					clearInterval(timer2)
+				});
+
+				$(".tab-item").mouseover(function() {
+					$(this).addClass("active").siblings().removeClass("active");
+					var idx = $(this).index();
+					$(".main").eq(idx).addClass("selected").siblings().removeClass("selected");
+				})
+
+
+				//分页
+				var currentPage = Number(2);
+				var pageNum = Number(50);
+
+				$("#page_btn2").text(currentPage - 2);
+				$("#page_btn3").text(currentPage - 1);
+				$("#page_btn4").text(currentPage);
+				$("#page_btn5").text(currentPage + 1);
+				$("#page_btn6").text(currentPage + 2);
+				$("#page_btn7").text(pageNum);
+
+
+				$("#page_btn4").css("background-color", "#4f90fb");
+				$("#page_btn4").css("border", "1px solid #ddd");
+				$("#page_btn4").css("color", "#fff");
+
+
+				if (currentPage == 1) {
+					$("#prePage").hide();
+				}
+
+				if (currentPage == pageNum) {
+					$("#sufPage").hide();
+				}
+
+
+				if (currentPage <= 3) {
+					$("#prePoint").hide();
+					$("#page_btn1").hide();
+				} else if (currentPage == 4) {
+					$("#prePoint").hide();
+				}
+
+				if (currentPage == 1) {
+					$("#page_btn2").hide();
+					$("#page_btn3").hide();
+				} else if (currentPage == 2) {
+					$("#page_btn2").hide();
+				}
+
+				if (currentPage >= pageNum - 2) {
+					$("#sufPoint").hide();
+					$("##page_btn7").hide();
+				} else if (currentPage == pageNum - 3) {
+					$("#sufPoint").hide();
+				}
+
+				if (currentPage == pageNum) {
+					$("#page_btn5").hide();
+					$("#page_btn6").hide();
+				}
+
+				if (currentPage == pageNum - 1) {
+					$("#page_btn6").hide();
+				}
+				
+				
+				$('.citem').hover(function  () {
+					$(this).css('opacity','0.6');
+					$(this).children('a').children('span').show().css('opacity','1');
+				},function  () {
+					$(this).children('a').children('span').hide();
+					$(this).css('opacity','1');
+				})
+				
+			})
+		</script>
+	</head>
+	<body>
+		<div class="header">
+			<div class="top pr">
+				<div class="top_l fl">
+					<ul>
+						<li>
+							<a href="javascript" class="comdown" style="color:#2F2F2F">中国大陆</a>
+							<div class="dq">
+								<ul>
+									<li><a href="">全球</a></li>
+									<li><a href="">中国大陆</a></li>
+									<li><a href="">香港</a></li>
+									<li><a href="">台湾</a></li>
+									<li><a href="">澳门</a></li>
+									<li><a href="">韩国</a></li>
+									<li><a href="">马来西亚</a></li>
+									<li><a href="">澳大利亚</a></li>
+									<li><a href="">新加坡</a></li>
+									<li><a href="">新西兰</a></li>
+								</ul>
+							</div>
+						</li>
+						<li><a href="#" class="on">亲，请登录</a></li>
+						<li><a href="#">免费注册</a></li>
+						<li><a href="#">手机逛淘宝</a></li>
+					</ul>
+				</div>
+
+				<div class="top_r fr pr">
+					<ul>
+						<li><a href="#" class="comdown">我的淘宝</a>
+							<div class="myt">
+								<ul>
+									<li><a href="">已买到的宝贝</a></li>
+									<li><a href="">我的足记</a></li>
+								</ul>
+							</div>
+						</li>
+						<li><a href="#" class="comdown"><img src="img/icon/gwc.jpg">购物车</a></li>
+						<li>
+							<a href="#" class="comdown">&#9733 &nbsp 收藏夹</a>
+							<div class="scj">
+								<ul>
+									<li><a href="">收藏的宝贝</a></li>
+									<li><a href="">收藏的店铺</a></li>
+								</ul>
+							</div>
+						</li>
+						<li><a href="#" class="fgx">商品分类</a></li>
+						<li>
+							<a href="#" class="comdown">千牛卖家中心</a>
+							<div class="qn">
+								<ul>
+									<li><a href="">免费开店</a></li>
+									<li><a href="">已卖出的宝贝</a></li>
+									<li><a href="">出售中的宝贝</a></li>
+									<li><a href="">卖家服务市场</a></li>
+									<li><a href="">卖家培训中心</a></li>
+									<li><a href="">体检中心</a></li>
+									<li><a href="">问商友</a></li>
+									<li><a href="">舒洪凡</a></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<a href="#" class="comdown">联系客服</a>
+							<div class="kf">
+								<ul>
+									<li><a href="">消费者客服</a></li>
+									<li><a href="">卖家客服</a></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<a href="#"><img src="img/icon/dh.jpg">网站导航</a>
+							<div class="top_nav comwidth fl">
+								<ul class="ztsc com_top_nav">
+									<h3 style="color:red">主题市场</h3>
+									<li><a href="#">女装</a></li>
+									<li><a href="#">箱包</a></li>
+									<li><a href="#">手机</a></li>
+									<li><a href="#">手表</a></li>
+									<li><a href="#">鲜花</a></li>
+									<li><a href="#">游戏</a></li>
+									<li><a href="#">装修</a></li>
+									<li><a href="#">汽车</a></li>
+									<li><a href="#">汽车</a></li>
+									<li><a href="#">汽车</a></li>
+									<li><a href="#">汽车</a></li>
+									<li><a href="#">汽车</a></li>
+									<li><a href="#">汽车</a></li>
+									<li><a href="#">汽车</a></li>
+									<li><a href="#">汽车</a></li>
+									<li><a href="#">汽车</a></li>
+									<li><a href="#">汽车</a></li>
+									<li><a href="#">汽车</a></li>
+									<li><a href="#">汽车</a></li>
+									<li><a href="#">汽车</a></li>
+								</ul>
+								<ul class="tssc com_top_nav">
+									<h3 style="color:green">特色市场</h3>
+									<li><a href="#">全球购</a></li>
+									<li><a href="#">美妆秀</a></li>
+									<li><a href="#">爱逛街</a></li>
+									<li><a href="#">淘女郎</a></li>
+									<li><a href="#">星店</a></li>
+									<li><a href="#">特色中国</a></li>
+									<li><a href="#">特色中国</a></li>
+									<li><a href="#">特色中国</a></li>
+									<li><a href="#">特色中国</a></li>
+									<li><a href="#">特色中国</a></li>
+									<li><a href="#">特色中国</a></li>
+									<li><a href="#">特色中国</a></li>
+									<li><a href="#">特色中国</a></li>
+									<li><a href="#">特色中国</a></li>
+									<li><a href="#">特色中国</a></li>
+									<li><a href="#">特色中国</a></li>
+									<li><a href="#">特色中国</a></li>
+									<li><a href="#">特色中国</a></li>
+									<li><a href="#">特色中国</a></li>
+									<li><a href="#">特色中国</a></li>
+								</ul>
+								<ul class="al com_top_nav">
+									<h3 style="color:pink">阿里APP</h3>
+									<li><a href="#">全球购</a></li>
+									<li><a href="#">美妆秀</a></li>
+									<li><a href="#">爱逛街</a></li>
+									<li><a href="#">淘女郎</a></li>
+									<li><a href="#">星店</a></li>
+									<li><a href="#">特色中国</a></li>
+									<li><a href="#">特色中国</a></li>
+									<li><a href="#">特色中国</a></li>
+									<li><a href="#">特色中国</a></li>
+									<li><a href="#">特色中国</a></li>
+									<li><a href="#">特色中国</a></li>
+									<li><a href="#">特色中国</a></li>
+									<li><a href="#">特色中国</a></li>
+									<li><a href="#">特色中国</a></li>
+									<li><a href="#">特色中国</a></li>
+									<li><a href="#">特色中国</a></li>
+									<li><a href="#">特色中国</a></li>
+									<li><a href="#">特色中国</a></li>
+									<li><a href="#">特色中国</a></li>
+									<li><a href="#">特色中国</a></li>
+								</ul>
+								<ul class="jc com_top_nav" style="border:none">
+									<h3 style="color:blue">精彩推荐集</h3>
+									<li><a href="#">全球购</a></li>
+									<li><a href="#">美妆秀</a></li>
+									<li><a href="#">爱逛街</a></li>
+									<li><a href="#">淘女郎</a></li>
+									<li><a href="#">星店</a></li>
+									<li><a href="#">特色中国</a></li>
+									<li><a href="#">特色中国</a></li>
+									<li><a href="#">特色中国</a></li>
+									<li><a href="#">特色中国</a></li>
+									<li><a href="#">特色中国</a></li>
+									<li><a href="#">特色中国</a></li>
+									<li><a href="#">特色中国</a></li>
+									<li><a href="#">特色中国</a></li>
+									<li><a href="#">特色中国</a></li>
+									<li><a href="#">特色中国</a></li>
+									<li><a href="#">特色中国</a></li>
+									<li><a href="#">特色中国</a></li>
+									<li><a href="#">特色中国</a></li>
+									<li><a href="#">特色中国</a></li>
+									<li><a href="#">特色中国</a></li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="ls cl">
+				<div class="comwidth ">
+					<div class="logo fl">
+						<a><img src="img/ct/7.jpg" alt=""></a>
+					</div>
+
+
+					<div class="search fl">
+						<div class="item_t fl on">
+							<ul>
+								<li><a href="#">宝贝</a></li>
+								<li><a href="#">天猫</a></li>
+								<li><a href="#">店铺</a></li>
+							</ul>
+						</div>
+
+						<div class="search_z">
+							<input type="text" class="search_text">
+							<input type="button" value="搜索" class="search_btn">
+						</div>
+
+						<div class="item_b fl">
+							<ul>
+								<li><a href="#">新款连衣裙</a></li>
+								<li><a href="#">四件套</a></li>
+								<li><a href="#">潮流T恤</a></li>
+								<li><a href="#">时尚女鞋</a></li>
+								<li><a href="#">新款男鞋</a></li>
+								<li><a href="#">墙纸</a></li>
+								<li><a href="#">耳机</a></li>
+								<li><a href="#">时尚女包</a></li>
+								<li><a href="#" class="fr">更多&gt</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="nav cl comwidth">
+				<div class="nav_t ">
+					<h3>主题市场</h3>
+					<ul>
+						<li><a href="">天猫</a></li>
+						<li><a href="">聚划算</a></li>
+						<li><a href="">天猫超市</a></li>
+						<li>|</li>
+						<li><a href="">淘抢购</a></li>
+						<li><a href="">电器城</a></li>
+						<li><a href="">司法拍卖</a></li>
+						<li><a href="">中国制造</a></li>
+						<li><a href="">兴农扶贫</a></li>
+						<li>|</li>
+						<li><a href="">肥猪旅行</a></li>
+						<li><a href="">智能生活</a></li>
+						<li><a href="">苏宁易购</a></li>
+						<li><a href="">云晒大会</a></li>
+					</ul>
+				</div>
+				<div class="nav_m fl ">
+					<div class="nav_l fl">
+						<div class="nal_t">
+							<div class="nav_show fl pr">
+								<ul>
+									<li><a href="">女装</a> / <a href="">男装</a> / <a href="">内衣</a><a href="" class="right">></a>
+										<div class="show_item">
+											<div class="item_l">
+												<dl>
+													<dt><a href="#">
+															<h3 class="fl">女装</h3>
+														</a> <a href="" class="fr">更多&gt</a></dt>
+													<dd>
+														<a href="">夏上新</a><a href="">连衣裙</a><a href="">T恤</a><a href="">衬衫</a><a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a><a href="">牛仔裤</a><a href="">蕾丝衫</a><a href="">背心吊带</a>
+														<a href="">夏上新</a><a href="">连衣裙</a><a href="">T恤</a><a href="">衬衫</a><a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+													</dd>
+													<dt><a>
+															<h3 class="fl">男装</h3>
+														</a> <a class="fr">更多&gt</a></dt>
+													<dd>
+														<a href="">裤子</a> <a href="">春款外套</a> <a href="">牛仔裤</a> <a href="">商务装</a> <a href="">商务装</a>
+														<a href="">夏上新</a> <a href="">商务装</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">春款外套</a> <a href="">牛仔裤</a> <a href="">商务装</a> <a href="">商务装</a>
+														<a href="">夏上新</a> <a href="">春款外套</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">商务装</a>
+													</dd>
+													<dt><a>
+															<h3 class="fl">内衣</h3>
+														</a> <a class="fr">更多&gt</a></dt>
+													<dd>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+													</dd>
+												</dl>
+											</div>
+											<div class="item_r">
+												<ul>
+													<h4>猜你喜欢</h4>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</li>
+
+									<li><a href="">鞋靴</a> / <a href="">箱包</a> / <a href="">配件</a><a href="" class="right">></a>
+										<div class="show_item">
+											<div class="item_l">
+												<dl>
+													<dt><a href="#">
+															<h3 class="fl">鞋靴</h3>
+														</a> <a href="" class="fr">更多&gt</a></dt>
+													<dd>
+														<a href="">夏上新</a><a href="">连衣裙</a><a href="">T恤</a><a href="">衬衫</a><a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a><a href="">牛仔裤</a><a href="">蕾丝衫</a><a href="">背心吊带</a>
+														<a href="">夏上新</a><a href="">连衣裙</a><a href="">T恤</a><a href="">衬衫</a><a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+													</dd>
+													<dt><a>
+															<h3 class="fl">箱包</h3>
+														</a> <a class="fr">更多&gt</a></dt>
+													<dd>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+													</dd>
+													<dt><a>
+															<h3 class="fl">配件</h3>
+														</a> <a class="fr">更多&gt</a></dt>
+													<dd>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+													</dd>
+												</dl>
+											</div>
+											<div class="item_r">
+												<ul>
+													<h4>猜你喜欢</h4>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</li>
+
+									<li><a href="">童装玩具</a> / <a href="">孕产</a> / <a href="">用品</a><a href="" class="right">></a>
+										<div class="show_item">
+											<div class="item_l">
+												<dl>
+													<dt><a href="#">
+															<h3 class="fl">童装玩具</h3>
+														</a> <a href="" class="fr">更多&gt</a></dt>
+													<dd>
+														<a href="">夏上新</a><a href="">连衣裙</a><a href="">T恤</a><a href="">衬衫</a><a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a><a href="">牛仔裤</a><a href="">蕾丝衫</a><a href="">背心吊带</a>
+														<a href="">夏上新</a><a href="">连衣裙</a><a href="">T恤</a><a href="">衬衫</a><a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+													</dd>
+													<dt><a>
+															<h3 class="fl">孕产</h3>
+														</a> <a class="fr">更多&gt</a></dt>
+													<dd>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+													</dd>
+													<dt><a>
+															<h3 class="fl">用品</h3>
+														</a> <a class="fr">更多&gt</a></dt>
+													<dd>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+													</dd>
+												</dl>
+											</div>
+											<div class="item_r">
+												<ul>
+													<h4>猜你喜欢</h4>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</li>
+
+									<li><a href="">家电</a> / <a href="">数码</a> / <a href="">保健品</a><a href="" class="right">></a>
+										<div class="show_item">
+											<div class="item_l">
+												<dl>
+													<dt><a href="#">
+															<h3 class="fl">家电</h3>
+														</a> <a href="" class="fr">更多&gt</a></dt>
+													<dd>
+														<a href="">夏上新</a><a href="">连衣裙</a><a href="">T恤</a><a href="">衬衫</a><a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a><a href="">牛仔裤</a><a href="">蕾丝衫</a><a href="">背心吊带</a>
+														<a href="">夏上新</a><a href="">连衣裙</a><a href="">T恤</a><a href="">衬衫</a><a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+													</dd>
+													<dt><a>
+															<h3 class="fl">数码</h3>
+														</a> <a class="fr">更多&gt</a></dt>
+													<dd>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+													</dd>
+													<dt><a>
+															<h3 class="fl">保健品</h3>
+														</a> <a class="fr">更多&gt</a></dt>
+													<dd>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+													</dd>
+												</dl>
+											</div>
+											<div class="item_r">
+												<ul>
+													<h4>猜你喜欢</h4>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</li>
+
+									<li><a href="">珠宝</a> / <a href="">眼镜</a> / <a href="">手表</a><a href="" class="right">></a>
+										<div class="show_item">
+											<div class="item_l">
+												<dl>
+													<dt><a href="#">
+															<h3 class="fl">珠宝</h3>
+														</a> <a href="" class="fr">更多&gt</a></dt>
+													<dd>
+														<a href="">夏上新</a><a href="">连衣裙</a><a href="">T恤</a><a href="">衬衫</a><a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a><a href="">牛仔裤</a><a href="">蕾丝衫</a><a href="">背心吊带</a>
+														<a href="">夏上新</a><a href="">连衣裙</a><a href="">T恤</a><a href="">衬衫</a><a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+													</dd>
+													<dt><a>
+															<h3 class="fl">眼镜</h3>
+														</a> <a class="fr">更多&gt</a></dt>
+													<dd>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+													</dd>
+													<dt><a>
+															<h3 class="fl">手表</h3>
+														</a> <a class="fr">更多&gt</a></dt>
+													<dd>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+													</dd>
+												</dl>
+											</div>
+											<div class="item_r">
+												<ul>
+													<h4>猜你喜欢</h4>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</li>
+
+									<li><a href="">运动</a> / <a href="">户外</a> / <a href="">乐器</a><a href="" class="right">></a>
+										<div class="show_item">
+											<div class="item_l">
+												<dl>
+													<dt><a href="#">
+															<h3 class="fl">运动</h3>
+														</a> <a href="" class="fr">更多&gt</a></dt>
+													<dd>
+														<a href="">夏上新</a><a href="">连衣裙</a><a href="">T恤</a><a href="">衬衫</a><a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a><a href="">牛仔裤</a><a href="">蕾丝衫</a><a href="">背心吊带</a>
+														<a href="">夏上新</a><a href="">连衣裙</a><a href="">T恤</a><a href="">衬衫</a><a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+													</dd>
+													<dt><a>
+															<h3 class="fl">户外</h3>
+														</a> <a class="fr">更多&gt</a></dt>
+													<dd>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+													</dd>
+													<dt><a>
+															<h3 class="fl">乐器</h3>
+														</a> <a class="fr">更多&gt</a></dt>
+													<dd>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+													</dd>
+												</dl>
+											</div>
+											<div class="item_r">
+												<ul>
+													<h4>猜你喜欢</h4>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</li>
+
+									<li><a href="">游戏</a> / <a href="">动漫</a> / <a href="">影视</a><a href="" class="right">></a>
+										<div class="show_item">
+											<div class="item_l">
+												<dl>
+													<dt><a href="#">
+															<h3 class="fl">游戏</h3>
+														</a> <a href="" class="fr">更多&gt</a></dt>
+													<dd>
+														<a href="">夏上新</a><a href="">连衣裙</a><a href="">T恤</a><a href="">衬衫</a><a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a><a href="">牛仔裤</a><a href="">蕾丝衫</a><a href="">背心吊带</a>
+														<a href="">夏上新</a><a href="">连衣裙</a><a href="">T恤</a><a href="">衬衫</a><a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+													</dd>
+													<dt><a>
+															<h3 class="fl">动漫</h3>
+														</a> <a class="fr">更多&gt</a></dt>
+													<dd>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+													</dd>
+													<dt><a>
+															<h3 class="fl">影视</h3>
+														</a> <a class="fr">更多&gt</a></dt>
+													<dd>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+													</dd>
+												</dl>
+											</div>
+											<div class="item_r">
+												<ul>
+													<h4>猜你喜欢</h4>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</li>
+
+									<li><a href="">珠宝</a> / <a href="">眼镜</a> / <a href="">手表</a><a href="" class="right">></a>
+										<div class="show_item">
+											<div class="item_l">
+												<dl>
+													<dt><a href="#">
+															<h3 class="fl">珠宝</h3>
+														</a> <a href="" class="fr">更多&gt</a></dt>
+													<dd>
+														<a href="">夏上新</a><a href="">连衣裙</a><a href="">T恤</a><a href="">衬衫</a><a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a><a href="">牛仔裤</a><a href="">蕾丝衫</a><a href="">背心吊带</a>
+														<a href="">夏上新</a><a href="">连衣裙</a><a href="">T恤</a><a href="">衬衫</a><a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+													</dd>
+													<dt><a>
+															<h3 class="fl">眼镜</h3>
+														</a> <a class="fr">更多&gt</a></dt>
+													<dd>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+													</dd>
+													<dt><a>
+															<h3 class="fl">手表</h3>
+														</a> <a class="fr">更多&gt</a></dt>
+													<dd>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+													</dd>
+												</dl>
+											</div>
+											<div class="item_r">
+												<ul>
+													<h4>猜你喜欢</h4>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</li>
+
+									<li><a href="">女装</a> / <a href="">男装</a> / <a href="">内衣</a><a href="" class="right">></a>
+										<div class="show_item">
+											<div class="item_l">
+												<dl>
+													<dt><a href="#">
+															<h3 class="fl">女装</h3>
+														</a> <a href="" class="fr">更多&gt</a></dt>
+													<dd>
+														<a href="">夏上新</a><a href="">连衣裙</a><a href="">T恤</a><a href="">衬衫</a><a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a><a href="">牛仔裤</a><a href="">蕾丝衫</a><a href="">背心吊带</a>
+														<a href="">夏上新</a><a href="">连衣裙</a><a href="">T恤</a><a href="">衬衫</a><a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+													</dd>
+													<dt><a>
+															<h3 class="fl">男装</h3>
+														</a> <a class="fr">更多&gt</a></dt>
+													<dd>
+														<a href="">裤子</a> <a href="">春款外套</a> <a href="">牛仔裤</a> <a href="">商务装</a> <a href="">商务装</a>
+														<a href="">夏上新</a> <a href="">商务装</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">春款外套</a> <a href="">牛仔裤</a> <a href="">商务装</a> <a href="">商务装</a>
+														<a href="">夏上新</a> <a href="">春款外套</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">商务装</a>
+													</dd>
+													<dt><a>
+															<h3 class="fl">内衣</h3>
+														</a> <a class="fr">更多&gt</a></dt>
+													<dd>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+													</dd>
+												</dl>
+											</div>
+											<div class="item_r">
+												<ul>
+													<h4>猜你喜欢</h4>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</li>
+
+									<li><a href="">鞋靴</a> / <a href="">箱包</a> / <a href="">配件</a><a href="" class="right">></a>
+										<div class="show_item">
+											<div class="item_l">
+												<dl>
+													<dt><a href="#">
+															<h3 class="fl">鞋靴</h3>
+														</a> <a href="" class="fr">更多&gt</a></dt>
+													<dd>
+														<a href="">夏上新</a><a href="">连衣裙</a><a href="">T恤</a><a href="">衬衫</a><a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a><a href="">牛仔裤</a><a href="">蕾丝衫</a><a href="">背心吊带</a>
+														<a href="">夏上新</a><a href="">连衣裙</a><a href="">T恤</a><a href="">衬衫</a><a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+													</dd>
+													<dt><a>
+															<h3 class="fl">箱包</h3>
+														</a> <a class="fr">更多&gt</a></dt>
+													<dd>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+													</dd>
+													<dt><a>
+															<h3 class="fl">配件</h3>
+														</a> <a class="fr">更多&gt</a></dt>
+													<dd>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+													</dd>
+												</dl>
+											</div>
+											<div class="item_r">
+												<ul>
+													<h4>猜你喜欢</h4>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</li>
+
+									<li><a href="">童装玩具</a> / <a href="">孕产</a> / <a href="">用品</a><a href="" class="right">></a>
+										<div class="show_item">
+											<div class="item_l">
+												<dl>
+													<dt><a href="#">
+															<h3 class="fl">童装玩具</h3>
+														</a> <a href="" class="fr">更多&gt</a></dt>
+													<dd>
+														<a href="">夏上新</a><a href="">连衣裙</a><a href="">T恤</a><a href="">衬衫</a><a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a><a href="">牛仔裤</a><a href="">蕾丝衫</a><a href="">背心吊带</a>
+														<a href="">夏上新</a><a href="">连衣裙</a><a href="">T恤</a><a href="">衬衫</a><a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+													</dd>
+													<dt><a>
+															<h3 class="fl">孕产</h3>
+														</a> <a class="fr">更多&gt</a></dt>
+													<dd>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+													</dd>
+													<dt><a>
+															<h3 class="fl">用品</h3>
+														</a> <a class="fr">更多&gt</a></dt>
+													<dd>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+													</dd>
+												</dl>
+											</div>
+											<div class="item_r">
+												<ul>
+													<h4>猜你喜欢</h4>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</li>
+
+									<li><a href="">家电</a> / <a href="">数码</a> / <a href="">保健品</a><a href="" class="right">></a>
+										<div class="show_item">
+											<div class="item_l">
+												<dl>
+													<dt><a href="#">
+															<h3 class="fl">家电</h3>
+														</a> <a href="" class="fr">更多&gt</a></dt>
+													<dd>
+														<a href="">夏上新</a><a href="">连衣裙</a><a href="">T恤</a><a href="">衬衫</a><a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a><a href="">牛仔裤</a><a href="">蕾丝衫</a><a href="">背心吊带</a>
+														<a href="">夏上新</a><a href="">连衣裙</a><a href="">T恤</a><a href="">衬衫</a><a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+													</dd>
+													<dt><a>
+															<h3 class="fl">数码</h3>
+														</a> <a class="fr">更多&gt</a></dt>
+													<dd>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+													</dd>
+													<dt><a>
+															<h3 class="fl">保健品</h3>
+														</a> <a class="fr">更多&gt</a></dt>
+													<dd>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+													</dd>
+												</dl>
+											</div>
+											<div class="item_r">
+												<ul>
+													<h4>猜你喜欢</h4>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</li>
+
+									<li><a href="">珠宝</a> / <a href="">眼镜</a> / <a href="">手表</a><a href="" class="right">></a>
+										<div class="show_item">
+											<div class="item_l">
+												<dl>
+													<dt><a href="#">
+															<h3 class="fl">珠宝</h3>
+														</a> <a href="" class="fr">更多&gt</a></dt>
+													<dd>
+														<a href="">夏上新</a><a href="">连衣裙</a><a href="">T恤</a><a href="">衬衫</a><a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a><a href="">牛仔裤</a><a href="">蕾丝衫</a><a href="">背心吊带</a>
+														<a href="">夏上新</a><a href="">连衣裙</a><a href="">T恤</a><a href="">衬衫</a><a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+													</dd>
+													<dt><a>
+															<h3 class="fl">眼镜</h3>
+														</a> <a class="fr">更多&gt</a></dt>
+													<dd>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+													</dd>
+													<dt><a>
+															<h3 class="fl">手表</h3>
+														</a> <a class="fr">更多&gt</a></dt>
+													<dd>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+													</dd>
+												</dl>
+											</div>
+											<div class="item_r">
+												<ul>
+													<h4>猜你喜欢</h4>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</li>
+
+									<li><a href="">运动</a> / <a href="">户外</a> / <a href="">乐器</a><a href="" class="right">></a>
+										<div class="show_item">
+											<div class="item_l">
+												<dl>
+													<dt><a href="#">
+															<h3 class="fl">运动</h3>
+														</a> <a href="" class="fr">更多&gt</a></dt>
+													<dd>
+														<a href="">夏上新</a><a href="">连衣裙</a><a href="">T恤</a><a href="">衬衫</a><a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a><a href="">牛仔裤</a><a href="">蕾丝衫</a><a href="">背心吊带</a>
+														<a href="">夏上新</a><a href="">连衣裙</a><a href="">T恤</a><a href="">衬衫</a><a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+													</dd>
+													<dt><a>
+															<h3 class="fl">户外</h3>
+														</a> <a class="fr">更多&gt</a></dt>
+													<dd>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+													</dd>
+													<dt><a>
+															<h3 class="fl">乐器</h3>
+														</a> <a class="fr">更多&gt</a></dt>
+													<dd>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+														<a href="">裤子</a> <a href="">半身裙</a> <a href="">牛仔裤</a> <a href="">蕾丝衫</a> <a href="">背心吊带</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+														<a href="">夏上新</a> <a href="">连衣裙</a> <a href="">T恤</a> <a href="">衬衫</a> <a href="">雪纺衫</a>
+													</dd>
+												</dl>
+											</div>
+											<div class="item_r">
+												<ul>
+													<h4>猜你喜欢</h4>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+													<li>
+														<a href="#"><img src="cloth.jpg">易品乐原创大码款</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="nav_c">
+								<div class="nav_c_l">
+									<div id="ncl_s" class="ncl_s">
+										<div id="slist">
+											<img src="img/navc/ncs/1.jpg" alt="1" style="display:block">
+											<img src="img/navc/ncs/2.jpg" alt="2">
+											<img src="img/navc/ncs/3.jpg" alt="3">
+											<img src="img/navc/ncs/4.jpg" alt="4">
+											<img src="img/navc/ncs/5.jpg" alt="5">
+										</div>
+										<div id="sbuttons">
+											<span class="light"></span><span></span><span></span><span></span><span></span>
+										</div>
+										<span class="snarrow" id="sprev">&lt</span>
+										<span class="snarrow" id="snext">&gt</span>
+									</div>
+									<div id="ncl_z"></div>
+									<div class="ncl_x " id="ncl_x">
+										<div id="shengs" class="shengs">
+											<img src="img/下载.png" >
+											<span>理想生活上天猫</span>
+											<div class="hengsye">
+												<p style="display:block">1/5</p>
+												<p>2/5</p>
+												<p>3/5</p>
+												<p>4/5</p>
+												<p>5/5</p>
+											</div>
+											<div class="cl"></div>
+											<div class="heng">
+												<span class="light"></span><span></span><span></span><span></span><span></span>
+											</div>
+										</div>
+										<div id="slist2">
+											<img src="img/navc/ncx/1.jpg" alt="1" style="display:block">
+											<img src="img/navc/ncx/2.jpg" alt="2">
+											<img src="img/navc/ncx/3.jpg" alt="3">
+											<img src="img/navc/ncx/4.jpg" alt="4">
+											<img src="img/navc/ncx/5.jpg" alt="5">
+										</div>
+									</div>
+								</div>
+
+								<div class="nav_c_r">
+									<ul>
+										<li style="margin-top: 10px;"><img src="img/navc/jyj.jpg"></li>
+										<li>
+											今日热卖<img src="img/navc/5z.jpg">
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="nal_b fl">
+							<div class="nbr">
+								<a href="#">
+									<div>
+										<img src="img/TB1KbhkbUgQMeJjy0FeXXXOEVXa-129-26.png"  style="padding: 30px;">
+									</div>
+									<div class="right" style="width: 500px;">
+										<h4 style="top:10px">夏日降温偏方，北欧风清新卫浴这般造</h4><a href="#" class="fr">更多&gt</a>
+										<span>比起大动干戈的客厅打造，独爱那温馨的卫浴空间，任由安静的色泽与各好物发光发热，由此打造远离尘世的北欧空间，上演一出以无胜多的神奇逆袭，将清新感贯穿于细节之中，从此解禁夏日凉爽，get全新的降温时光。</span>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="nav_r fl">
+						<div class="xinxi cl" style="margin-top: 10px;">
+							<div style="padding-left:40%">
+								<img src="img/icon/tx.jpg">
+							</div>
+							<div>Hi!你好</div>
+							<div><a href="#">领淘金币抵钱</a> <a href="#">会员俱乐部</a></div>
+							<div style="padding-left:10%">
+								<ul>
+									<li><a href="#">登录</a></li>
+									<li><a href="#">注册</a></li>
+									<li><a href="#">开店</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="jubao"><a href="#">网上有害信息举报专区</a></div>
+						<div class="wrapper">
+							<ul class="tab">
+								<li class="tab-item active">公告</li>
+								<li class="tab-item">规则</li>
+								<li class="tab-item">论坛</li>
+								<li class="tab-item">安全</li>
+								<li class="tab-item">公益</li>
+							</ul>
+							<div class="neirong">
+								<div class="main selected"><a href="#">马哈蒂尔:马云思维超前于时代 通过阿里学习中国</a> <a href="#">盘点世界杯带火的职业</a> <a href="#">外媒聚焦618成天猫主场</a></div>
+								<div class="main"><a href="#">《淘宝直播平台管理规</a><a href="#">新增《淘宝网抽检标准</a><a href="#">《淘宝禁售商品管理规</a><a href="#">新增《淘宝网抽检标准</a></div>
+								<div class="main"><a href="#">马哈蒂尔:马云思维超前于时代 通过阿里学习中国</a><a href="#">盘点世界杯带火的职业</a><a href="#">外媒聚焦618成天猫主场</a></div>
+								<div class="main"><a href="#">《淘宝直播平台管理规</a><a href="#">新增《淘宝网抽检标准</a><a href="#">《淘宝禁售商品管理规</a><a href="#">新增《淘宝网抽检标准</a></div>
+								<div class="main"><a href="#">马哈蒂尔:马云思维超前于时代 通过阿里学习中国</a><a href="#">盘点世界杯带火的职业</a><a href="#">外媒聚焦618成天猫主场</a></div>
+							</div>
+						</div>
+						<div class=""></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div id="menu">
+			<ul>
+				<li><a href="#citem1" class="current">1F 小相机</a></li>
+				<li><a href="#citem2">2F 黑相机</a></li>
+				<li><a href="#citem3">3F 红相机</a></li>
+				<li><a href="#citem4">4F 白相机</a></li>
+				<li><a href="#citem5">5F 黑白相机</a></li>
+				<li><a href="#">回到顶部</a></li>
+			</ul>
+		</div>
+		<div id="content" class="content comwidth cl">
+
+			<div id="citem1" class="item">
+				<h3>小相机</h3>
+				<div class="cshow fl">
+					<div class="htile">
+						<span>与品质生活不期而遇</span>
+						<a href="#" class="fr">换一换</a>
+					</div>
+					<div class="cneirong cl">
+						<div class="citem pr">
+							<a href="#">
+								<img src="img/content/1.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">小型相机</h4>
+									<p class="mb5">用过都说好</p>
+									
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/1.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">小型相机</h4>
+									<p class="mb5">用过都说好</p>
+									
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/1.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">小型相机</h4>
+									<p class="mb5">用过都说好</p>
+									
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/1.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">小型相机</h4>
+									<p class="mb5">用过都说好</p>
+									
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/1.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">小型相机</h4>
+									<p class="mb5">用过都说好</p>
+									
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/1.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">小型相机</h4>
+									<p class="mb5">用过都说好</p>
+									
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="cshow fl">
+					<div class="htile">
+						<span>与品质生活不期而遇</span>
+						<a href="#" class="fr">换一换</a>
+					</div>
+					<div class="cneirong cl">
+						<div class="citem pr">
+							<a href="#">
+								<img src="img/content/1.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">小型相机</h4>
+									<p class="mb5">用过都说好</p>
+									
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/1.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">小型相机</h4>
+									<p class="mb5">用过都说好</p>
+									
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/1.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">小型相机</h4>
+									<p class="mb5">用过都说好</p>
+									
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/1.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">小型相机</h4>
+									<p class="mb5">用过都说好</p>
+									
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/1.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">小型相机</h4>
+									<p class="mb5">用过都说好</p>
+									
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/1.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">小型相机</h4>
+									<p class="mb5">用过都说好</p>
+									
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div id="citem2" class="item">
+				<h3>黑相机</h3>
+				<div class="cshow fl">
+					<div class="htile">
+						<span>与品质生活不期而遇</span>
+						<a href="#" class="fr">换一换</a>
+					</div>
+					<div class="cneirong cl">
+						<div class="citem pr">
+							<a href="#">
+								<img src="img/content/2.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">黑色相机</h4>
+									<p class="mb5">用儒雅的相机拍出高雅的照片</p>
+
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/2.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">黑色相机</h4>
+									<p class="mb5">用儒雅的相机拍出高雅的照片</p>
+							
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/2.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">黑色相机</h4>
+									<p class="mb5">用儒雅的相机拍出高雅的照片</p>
+							
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/2.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">黑色相机</h4>
+									<p class="mb5">用儒雅的相机拍出高雅的照片</p>
+							
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/2.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">黑色相机</h4>
+									<p class="mb5">用儒雅的相机拍出高雅的照片</p>
+							
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/2.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">黑色相机</h4>
+									<p class="mb5">用儒雅的相机拍出高雅的照片</p>
+							
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="cshow fl">
+					<div class="htile">
+						<span>与品质生活不期而遇</span>
+						<a href="#" class="fr">换一换</a>
+					</div>
+					<div class="cneirong cl">
+						<div class="citem pr">
+							<a href="#">
+								<img src="img/content/2.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">黑色相机</h4>
+									<p class="mb5">用儒雅的相机拍出高雅的照片</p>
+
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/2.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">黑色相机</h4>
+									<p class="mb5">用儒雅的相机拍出高雅的照片</p>
+							
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/2.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">黑色相机</h4>
+									<p class="mb5">用儒雅的相机拍出高雅的照片</p>
+							
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/2.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">黑色相机</h4>
+									<p class="mb5">用儒雅的相机拍出高雅的照片</p>
+							
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/2.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">黑色相机</h4>
+									<p class="mb5">用儒雅的相机拍出高雅的照片</p>
+							
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/2.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">黑色相机</h4>
+									<p class="mb5">用儒雅的相机拍出高雅的照片</p>
+							
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div id="citem3" class="item">
+				<h3>红相机</h3>
+				<div class="cshow fl">
+					<div class="htile">
+						<span>与品质生活不期而遇</span>
+						<a href="#" class="fr">换一换</a>
+					</div>
+					<div class="cneirong cl">
+						<div class="citem pr">
+							<a href="#">
+								<img src="img/content/3.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">红色相机</h4>
+									<p class="mb5">用儒雅的相机拍出高雅的照片</p>
+
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/3.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">红色相机</h4>
+									<p class="mb5">用儒雅的相机拍出高雅的照片</p>
+							
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/3.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">红色相机</h4>
+									<p class="mb5">用儒雅的相机拍出高雅的照片</p>
+							
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/3.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">红色相机</h4>
+									<p class="mb5">用儒雅的相机拍出高雅的照片</p>
+							
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/3.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">红色相机</h4>
+									<p class="mb5">用儒雅的相机拍出高雅的照片</p>
+							
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/3.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">红色相机</h4>
+									<p class="mb5">用儒雅的相机拍出高雅的照片</p>
+							
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="cshow fl">
+					<div class="htile">
+						<span>与品质生活不期而遇</span>
+						<a href="#" class="fr">换一换</a>
+					</div>
+					<div class="cneirong cl">
+						<div class="citem pr">
+							<a href="#">
+								<img src="img/content/3.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">红色相机</h4>
+									<p class="mb5">用儒雅的相机拍出高雅的照片</p>
+
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/3.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">红色相机</h4>
+									<p class="mb5">用儒雅的相机拍出高雅的照片</p>
+							
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/3.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">红色相机</h4>
+									<p class="mb5">用儒雅的相机拍出高雅的照片</p>
+							
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/3.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">红色相机</h4>
+									<p class="mb5">用儒雅的相机拍出高雅的照片</p>
+							
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/3.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">红色相机</h4>
+									<p class="mb5">用儒雅的相机拍出高雅的照片</p>
+							
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/3.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">红色相机</h4>
+									<p class="mb5">用儒雅的相机拍出高雅的照片</p>
+							
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div id="citem4" class="item">
+				<h3>白相机</h3>
+				<div class="cshow fl">
+					<div class="htile">
+						<span>与品质生活不期而遇</span>
+						<a href="#" class="fr">换一换</a>
+					</div>
+					<div class="cneirong cl">
+						<div class="citem pr">
+							<a href="#">
+								<img src="img/content/4.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">白相机</h4>
+									<p class="mb5">温文儒雅的白</p>
+
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/4.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">白相机</h4>
+									<p class="mb5">温文儒雅的白</p>
+							
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/4.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">白相机</h4>
+									<p class="mb5">温文儒雅的白</p>
+							
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/4.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">白相机</h4>
+									<p class="mb5">温文儒雅的白</p>
+							
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/4.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">白相机</h4>
+									<p class="mb5">温文儒雅的白</p>
+							
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/4.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">白相机</h4>
+									<p class="mb5">温文儒雅的白</p>
+							
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="cshow fl">
+					<div class="htile">
+						<span>与品质生活不期而遇</span>
+						<a href="#" class="fr">换一换</a>
+					</div>
+					<div class="cneirong cl">
+						<div class="citem pr">
+							<a href="#">
+								<img src="img/content/4.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">白相机</h4>
+									<p class="mb5">温文儒雅的白</p>
+
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/4.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">白相机</h4>
+									<p class="mb5">温文儒雅的白</p>
+							
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/4.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">白相机</h4>
+									<p class="mb5">温文儒雅的白</p>
+							
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/4.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">白相机</h4>
+									<p class="mb5">温文儒雅的白</p>
+							
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/4.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">白相机</h4>
+									<p class="mb5">温文儒雅的白</p>
+							
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/4.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">白相机</h4>
+									<p class="mb5">温文儒雅的白</p>
+							
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div id="citem5" class="item">
+				<h3>黑白相机</h3>
+				<div class="cshow fl">
+					<div class="htile">
+						<span>与品质生活不期而遇</span>
+						<a href="#" class="fr">换一换</a>
+					</div>
+					<div class="cneirong cl">
+						<div class="citem pr">
+							<a href="#">
+								<img src="img/content/5.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">黑白相机</h4>
+									<p class="mb5">黑白交替，拍出经典</p>
+
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/5.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">黑白相机</h4>
+									<p class="mb5">黑白交替，拍出经典</p>
+							
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/5.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">黑白相机</h4>
+									<p class="mb5">黑白交替，拍出经典</p>
+							
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/5.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">黑白相机</h4>
+									<p class="mb5">黑白交替，拍出经典</p>
+							
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/5.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">黑白相机</h4>
+									<p class="mb5">黑白交替，拍出经典</p>
+							
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/5.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">黑白相机</h4>
+									<p class="mb5">黑白交替，拍出经典</p>
+							
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="cshow fl">
+					<div class="htile">
+						<span>与品质生活不期而遇</span>
+						<a href="#" class="fr">换一换</a>
+					</div>
+					<div class="cneirong cl">
+						<div class="citem pr">
+							<a href="#">
+								<img src="img/content/5.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">黑白相机</h4>
+									<p class="mb5">黑白交替，拍出经典</p>
+							
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/5.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">黑白相机</h4>
+									<p class="mb5">黑白交替，拍出经典</p>
+							
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/5.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">黑白相机</h4>
+									<p class="mb5">黑白交替，拍出经典</p>
+							
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/5.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">黑白相机</h4>
+									<p class="mb5">黑白交替，拍出经典</p>
+							
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/5.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">黑白相机</h4>
+									<p class="mb5">黑白交替，拍出经典</p>
+							
+								</div>
+							</a>
+						</div>
+						<div class="citem">
+							<a href="#">
+								<img src="img/content/5.jpg" class="mb5">
+								<span class="tpzs">努力学习前端</span>
+								<div>
+									<h4 class="mb5">黑白相机</h4>
+									<p class="mb5">黑白交替，拍出经典</p>
+							
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="page" class="page comwidth">
+			<ul>
+				<li class="page_li">
+					<button class="page_btn" style="width:100px" id="prePage">上一页</button>
+				</li>
+				<li class="page_li">
+					<button class="page_btn" id="page_btn1">1</button>
+				</li>
+				<li class="page_li">
+					<span class="pages_span" id="prePoint">...</span>
+				</li>
+				<li class="page_li">
+					<button class="page_btn" id="page_btn2"></button>
+				</li>
+				<li class="page_li">
+					<button class="page_btn" id="page_btn3"></button>
+				</li>
+				<li class="page_li">
+					<button class="page_btn" id="page_btn4"></button>
+				</li>
+				<li class="page_li">
+					<button class="page_btn" id="page_btn5"></button>
+				</li>
+				<li class="page_li">
+					<button class="page_btn" id="page_btn6"></button>
+				</li>
+				<li class="page_li">
+					<span class="pages_span" id="sufPoint">...</span>
+				</li>
+				<li class="page_li">
+					<button class="page_btn" id="page_btn7"></button>
+				</li>
+				<li class="page_li">
+					<button class="page_btn" style="width:100px" id="sufPage">下一页</button>
+				</li>
+			</ul>
+		</div>
+		<div class="footer comwidth cl">
+			<p>阿里巴巴集团|淘宝网|天猫|聚划算|全球速卖通|阿里巴巴国际交易市场|1688|阿里妈妈|飞猪|阿里云计算|AliOS|阿里通信|一淘|万网|高德|UC|友盟虾米|大麦网|钉钉|支付宝|优酷|土豆|阿里健康|阿里影业|阿里体育|网商银行</p>
+			<p>关于淘宝 | 合作伙伴 | 营销中心 | 廉正举报 | 联系客服 | 开放平台 | 诚征英才 | 联系我们 | 网站地图 | 隐私权政策 | 法律声明 | 知识产权 | © 2003-现在 Taobao.com 版权所有</p>
+			
+			<p>增值电信业务经营许可证：浙B2-20080224|增值电信业务经营许可证（跨地区）： B2-20150210|浙网文（2019）1033-086号|浙江省网络食品销售第三方平台提供者备案：浙网食A33010001</p>
+			
+			<p>互联网药品信息服务资格证书（浙）-经营性-2018-0010|短消息类服务接入代码使用证书：号【2016】00154-A01|信息网络传播视听许可证：1109364号|出版物网络交易平台服务经营备案号：新出发浙备字第002号</p>
+			
+			<p> 浙公网安备 33010002000078号 |广播电视节目制作经营许可证（浙）字第01012号|市场名称登记证：工商网市字3301004120号|医疗器械网络交易服务第三方平台备案：（浙）网械平台备字[2018]第00004号</p>
+			
+			<img src="img/QQ截图20190821172602.jpg" >
+			
+		</div>
+	</body>
+</html>
